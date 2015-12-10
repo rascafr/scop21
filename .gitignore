@@ -30,3 +30,17 @@
 
 # Debug files
 *.dSYM/
+
+#Folders en rab
+.settings
+Debug
+doxyoutput
+html
+latex
+lib
+
+#Autres en rab
+.cproject
+.project
+Doxyfile
+*.launch
