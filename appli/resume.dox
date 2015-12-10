@@ -1,0 +1,5 @@
+/*!
+  \mainpage Notre projet, c'est quoi ?
+Bien qu'utilisé par un nombre considérable de passionnés et professionnels de l'électronique dans le monde, l'oscilloscope est un outil qu'on a tendance à utiliser sans forcément en comprendre le fonctionnement. Mais que se passe t-il réellement à l'intérieur de ces machines ?
+C'est la question qui nous a poussés à nous diriger vers la réalisation d'un oscilloscope numérique au cours de ce mini-projet microprocesseurs, l'objectif fixé étant de réaliser un appareil permettant de relever différents types de signaux et d'en afficher le résultat sur un écran LCD.
+*/

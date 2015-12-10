@@ -1,0 +1,52 @@
+\hypertarget{colors_8c}{}\section{appli/mylibs/colors.c File Reference}
+\label{colors_8c}\index{appli/mylibs/colors.\+c@{appli/mylibs/colors.\+c}}
+
+
+Contient le code source des couleurs utilisées pour dessiner à l\textquotesingle{}écran, et quelques fonctions utiles.  
+
+
+{\ttfamily \#include \char`\"{}stm32f4xx\+\_\+hal.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}colors.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}macro\+\_\+types.\+h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{colors_8c_a3c5669049219ad068d2856ec2279423d}{Color565\+To\+B\+M\+P} (uint16\+\_\+t raw\+Buff, uint8\+\_\+t $\ast$bmp\+Buff)
+\begin{DoxyCompactList}\small\item\em Permet de convertir une couleur encodée en R\+B\+G565 en R\+G\+B888 B\+M\+P. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Contient le code source des couleurs utilisées pour dessiner à l\textquotesingle{}écran, et quelques fonctions utiles. 
+
+\begin{DoxyAuthor}{Author}
+François Leparoux 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+8 
+\end{DoxyVersion}
+
+
+\subsection{Function Documentation}
+\hypertarget{colors_8c_a3c5669049219ad068d2856ec2279423d}{}\index{colors.\+c@{colors.\+c}!Color565\+To\+B\+M\+P@{Color565\+To\+B\+M\+P}}
+\index{Color565\+To\+B\+M\+P@{Color565\+To\+B\+M\+P}!colors.\+c@{colors.\+c}}
+\subsubsection[{Color565\+To\+B\+M\+P(uint16\+\_\+t raw\+Buff, uint8\+\_\+t $\ast$bmp\+Buff)}]{\setlength{\rightskip}{0pt plus 5cm}void Color565\+To\+B\+M\+P (
+\begin{DoxyParamCaption}
+\item[{uint16\+\_\+t}]{raw\+Buff, }
+\item[{uint8\+\_\+t $\ast$}]{bmp\+Buff}
+\end{DoxyParamCaption}
+)}\label{colors_8c_a3c5669049219ad068d2856ec2279423d}
+
+
+Permet de convertir une couleur encodée en R\+B\+G565 en R\+G\+B888 B\+M\+P. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em raw\+Buff} & la couleur en R\+G\+B565 à convertir \\
+\hline
+{\em bmp\+Buff} & le tableau à remplir \+: 0 -\/$>$ bleu, 1-\/$>$ vert, 2-\/$>$rouge (cf spécifications B\+M\+P) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 17 of file colors.\+c.
+

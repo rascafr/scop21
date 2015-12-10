@@ -1,0 +1,290 @@
+\hypertarget{demo__touchscreen_8h}{}\section{appli/demo\+\_\+touchscreen.h File Reference}
+\label{demo__touchscreen_8h}\index{appli/demo\+\_\+touchscreen.\+h@{appli/demo\+\_\+touchscreen.\+h}}
+{\ttfamily \#include \char`\"{}stm32f4\+\_\+lcd.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}stmpe811.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}stm32f4xx\+\_\+hal.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}macro\+\_\+types.\+h\char`\"{}}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_t_s___a_d_c}{T\+S\+\_\+\+A\+D\+C}
+\begin{DoxyCompactList}\small\item\em Structure qui contient les résultats de la conversion analogique/numérique provenant de l\textquotesingle{}écran L\+C\+D. Ces données sont à l\textquotesingle{}image de la position de l\textquotesingle{}endroit pressé sur l\textquotesingle{}écran. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{demo__touchscreen_8h_a990476df76978760857e58fbd6fc0ae8}{C\+R\+O\+S\+S\+\_\+\+S\+I\+Z\+E}~10
+\item 
+\#define \hyperlink{demo__touchscreen_8h_abdcb562c342b411819b9f340542ba178}{C\+R\+O\+S\+S\+\_\+\+M\+A\+R\+G\+I\+N}~20
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{demo__touchscreen_8h_a71fca4638203182f7fa2c3402b1d7f80}{T\+S\+\_\+\+Calibration\+\_\+mode\+\_\+e} \{ \hyperlink{demo__touchscreen_8h_a71fca4638203182f7fa2c3402b1d7f80ab2be1bdefba574390abf27c84336e8ed}{C\+A\+L\+I\+B\+R\+A\+T\+I\+O\+N\+\_\+\+M\+O\+D\+E\+\_\+\+N\+O\+\_\+\+C\+A\+L\+I\+B\+R\+A\+T\+I\+O\+N} = 0, 
+\hyperlink{demo__touchscreen_8h_a71fca4638203182f7fa2c3402b1d7f80ab0a91b6f8ad011e46c98fc6441ffa085}{C\+A\+L\+I\+B\+R\+A\+T\+I\+O\+N\+\_\+\+M\+O\+D\+E\+\_\+\+J\+U\+S\+T\+\_\+\+C\+A\+L\+I\+B\+R\+A\+T\+E}, 
+\hyperlink{demo__touchscreen_8h_a71fca4638203182f7fa2c3402b1d7f80a544d759a7a703a0f7dd8f3c86de8a6e1}{C\+A\+L\+I\+B\+R\+A\+T\+I\+O\+N\+\_\+\+M\+O\+D\+E\+\_\+\+C\+A\+L\+I\+B\+R\+A\+T\+E\+\_\+\+A\+N\+D\+\_\+\+S\+H\+O\+W\+\_\+\+V\+A\+L\+U\+E}, 
+\hyperlink{demo__touchscreen_8h_a71fca4638203182f7fa2c3402b1d7f80a02963146324d5b037fbd42ffd810bb5d}{C\+A\+L\+I\+B\+R\+A\+T\+I\+O\+N\+\_\+\+M\+O\+D\+E\+\_\+\+C\+A\+L\+I\+B\+R\+A\+T\+E\+\_\+\+A\+N\+D\+\_\+\+S\+H\+O\+W\+\_\+\+V\+A\+L\+U\+E\+\_\+\+A\+N\+D\+\_\+\+P\+R\+O\+V\+I\+D\+E\+\_\+\+T\+E\+L\+E\+C\+R\+A\+N\+\_\+\+G\+A\+M\+E}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{demo__touchscreen_8h_aa4684d3435eb6381e44d133c627134a4}{T\+S\+\_\+\+Init} (void)
+\begin{DoxyCompactList}\small\item\em Initialise les ports utilisés par l\textquotesingle{}écran tactile et initialise les coefficients avec des valeurs par défaut. \end{DoxyCompactList}\item 
+bool\+\_\+e \hyperlink{demo__touchscreen_8h_ade23bc87d65f74a6ba6afd1e11fa6e4c}{T\+S\+\_\+is\+\_\+initialized} (void)
+\begin{DoxyCompactList}\small\item\em Retourne l\textquotesingle{}état d\textquotesingle{}initialisation du module T\+S. \end{DoxyCompactList}\item 
+running\+\_\+e \hyperlink{demo__touchscreen_8h_abc079c56bcb004b0a01e83c86fdaac04}{T\+S\+\_\+\+Calibration} (bool\+\_\+e ask\+\_\+for\+\_\+finish, \hyperlink{demo__touchscreen_8h_a71fca4638203182f7fa2c3402b1d7f80}{T\+S\+\_\+\+Calibration\+\_\+mode\+\_\+e} mode)
+\begin{DoxyCompactList}\small\item\em Calibre l\textquotesingle{}écran tactile. \end{DoxyCompactList}\item 
+bool\+\_\+e \hyperlink{demo__touchscreen_8h_abab6fb4efbb0e34bc95ab7b28de83537}{T\+S\+\_\+\+Get\+\_\+\+Touch} (uint16\+\_\+t $\ast$x, uint16\+\_\+t $\ast$y)
+\begin{DoxyCompactList}\small\item\em Retourne les coordonnées en X et en Y de l\textquotesingle{}endroit appuyé sur l\textquotesingle{}écran. \end{DoxyCompactList}\item 
+bool\+\_\+e \hyperlink{demo__touchscreen_8h_aaa871c874f78e1dde4c31f22aa6d9e1a}{T\+S\+\_\+\+Get\+\_\+\+Filtered\+\_\+\+Touch} (\hyperlink{struct_t_s___a_d_c}{T\+S\+\_\+\+A\+D\+C} $\ast$ts\+\_\+adc)
+\begin{DoxyCompactList}\small\item\em Retourne les valeurs filtrées (moyenne) issues de la conversion analogique numérique issue du L\+C\+D. \end{DoxyCompactList}\item 
+void \hyperlink{demo__touchscreen_8h_a4fa22907c3f024d4f6a3744e7ad2096b}{T\+S\+\_\+process\+\_\+1ms} (void)
+\begin{DoxyCompactList}\small\item\em Fonction appelee toutes les ms par la routine d\textquotesingle{}interruption du timer2. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{demo__touchscreen_8h_abdcb562c342b411819b9f340542ba178}{}\index{demo\+\_\+touchscreen.\+h@{demo\+\_\+touchscreen.\+h}!C\+R\+O\+S\+S\+\_\+\+M\+A\+R\+G\+I\+N@{C\+R\+O\+S\+S\+\_\+\+M\+A\+R\+G\+I\+N}}
+\index{C\+R\+O\+S\+S\+\_\+\+M\+A\+R\+G\+I\+N@{C\+R\+O\+S\+S\+\_\+\+M\+A\+R\+G\+I\+N}!demo\+\_\+touchscreen.\+h@{demo\+\_\+touchscreen.\+h}}
+\subsubsection[{C\+R\+O\+S\+S\+\_\+\+M\+A\+R\+G\+I\+N}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+O\+S\+S\+\_\+\+M\+A\+R\+G\+I\+N~20}\label{demo__touchscreen_8h_abdcb562c342b411819b9f340542ba178}
+
+
+Definition at line 22 of file demo\+\_\+touchscreen.\+h.
+
+\hypertarget{demo__touchscreen_8h_a990476df76978760857e58fbd6fc0ae8}{}\index{demo\+\_\+touchscreen.\+h@{demo\+\_\+touchscreen.\+h}!C\+R\+O\+S\+S\+\_\+\+S\+I\+Z\+E@{C\+R\+O\+S\+S\+\_\+\+S\+I\+Z\+E}}
+\index{C\+R\+O\+S\+S\+\_\+\+S\+I\+Z\+E@{C\+R\+O\+S\+S\+\_\+\+S\+I\+Z\+E}!demo\+\_\+touchscreen.\+h@{demo\+\_\+touchscreen.\+h}}
+\subsubsection[{C\+R\+O\+S\+S\+\_\+\+S\+I\+Z\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+R\+O\+S\+S\+\_\+\+S\+I\+Z\+E~10}\label{demo__touchscreen_8h_a990476df76978760857e58fbd6fc0ae8}
+
+
+Definition at line 21 of file demo\+\_\+touchscreen.\+h.
+
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{demo__touchscreen_8h_a71fca4638203182f7fa2c3402b1d7f80}{}\index{demo\+\_\+touchscreen.\+h@{demo\+\_\+touchscreen.\+h}!T\+S\+\_\+\+Calibration\+\_\+mode\+\_\+e@{T\+S\+\_\+\+Calibration\+\_\+mode\+\_\+e}}
+\index{T\+S\+\_\+\+Calibration\+\_\+mode\+\_\+e@{T\+S\+\_\+\+Calibration\+\_\+mode\+\_\+e}!demo\+\_\+touchscreen.\+h@{demo\+\_\+touchscreen.\+h}}
+\subsubsection[{T\+S\+\_\+\+Calibration\+\_\+mode\+\_\+e}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf T\+S\+\_\+\+Calibration\+\_\+mode\+\_\+e}}\label{demo__touchscreen_8h_a71fca4638203182f7fa2c3402b1d7f80}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{C\+A\+L\+I\+B\+R\+A\+T\+I\+O\+N\+\_\+\+M\+O\+D\+E\+\_\+\+N\+O\+\_\+\+C\+A\+L\+I\+B\+R\+A\+T\+I\+O\+N@{C\+A\+L\+I\+B\+R\+A\+T\+I\+O\+N\+\_\+\+M\+O\+D\+E\+\_\+\+N\+O\+\_\+\+C\+A\+L\+I\+B\+R\+A\+T\+I\+O\+N}!demo\+\_\+touchscreen.\+h@{demo\+\_\+touchscreen.\+h}}\index{demo\+\_\+touchscreen.\+h@{demo\+\_\+touchscreen.\+h}!C\+A\+L\+I\+B\+R\+A\+T\+I\+O\+N\+\_\+\+M\+O\+D\+E\+\_\+\+N\+O\+\_\+\+C\+A\+L\+I\+B\+R\+A\+T\+I\+O\+N@{C\+A\+L\+I\+B\+R\+A\+T\+I\+O\+N\+\_\+\+M\+O\+D\+E\+\_\+\+N\+O\+\_\+\+C\+A\+L\+I\+B\+R\+A\+T\+I\+O\+N}}\item[{\em 
+\hypertarget{demo__touchscreen_8h_a71fca4638203182f7fa2c3402b1d7f80ab2be1bdefba574390abf27c84336e8ed}{}C\+A\+L\+I\+B\+R\+A\+T\+I\+O\+N\+\_\+\+M\+O\+D\+E\+\_\+\+N\+O\+\_\+\+C\+A\+L\+I\+B\+R\+A\+T\+I\+O\+N\label{demo__touchscreen_8h_a71fca4638203182f7fa2c3402b1d7f80ab2be1bdefba574390abf27c84336e8ed}
+}]\index{C\+A\+L\+I\+B\+R\+A\+T\+I\+O\+N\+\_\+\+M\+O\+D\+E\+\_\+\+J\+U\+S\+T\+\_\+\+C\+A\+L\+I\+B\+R\+A\+T\+E@{C\+A\+L\+I\+B\+R\+A\+T\+I\+O\+N\+\_\+\+M\+O\+D\+E\+\_\+\+J\+U\+S\+T\+\_\+\+C\+A\+L\+I\+B\+R\+A\+T\+E}!demo\+\_\+touchscreen.\+h@{demo\+\_\+touchscreen.\+h}}\index{demo\+\_\+touchscreen.\+h@{demo\+\_\+touchscreen.\+h}!C\+A\+L\+I\+B\+R\+A\+T\+I\+O\+N\+\_\+\+M\+O\+D\+E\+\_\+\+J\+U\+S\+T\+\_\+\+C\+A\+L\+I\+B\+R\+A\+T\+E@{C\+A\+L\+I\+B\+R\+A\+T\+I\+O\+N\+\_\+\+M\+O\+D\+E\+\_\+\+J\+U\+S\+T\+\_\+\+C\+A\+L\+I\+B\+R\+A\+T\+E}}\item[{\em 
+\hypertarget{demo__touchscreen_8h_a71fca4638203182f7fa2c3402b1d7f80ab0a91b6f8ad011e46c98fc6441ffa085}{}C\+A\+L\+I\+B\+R\+A\+T\+I\+O\+N\+\_\+\+M\+O\+D\+E\+\_\+\+J\+U\+S\+T\+\_\+\+C\+A\+L\+I\+B\+R\+A\+T\+E\label{demo__touchscreen_8h_a71fca4638203182f7fa2c3402b1d7f80ab0a91b6f8ad011e46c98fc6441ffa085}
+}]\index{C\+A\+L\+I\+B\+R\+A\+T\+I\+O\+N\+\_\+\+M\+O\+D\+E\+\_\+\+C\+A\+L\+I\+B\+R\+A\+T\+E\+\_\+\+A\+N\+D\+\_\+\+S\+H\+O\+W\+\_\+\+V\+A\+L\+U\+E@{C\+A\+L\+I\+B\+R\+A\+T\+I\+O\+N\+\_\+\+M\+O\+D\+E\+\_\+\+C\+A\+L\+I\+B\+R\+A\+T\+E\+\_\+\+A\+N\+D\+\_\+\+S\+H\+O\+W\+\_\+\+V\+A\+L\+U\+E}!demo\+\_\+touchscreen.\+h@{demo\+\_\+touchscreen.\+h}}\index{demo\+\_\+touchscreen.\+h@{demo\+\_\+touchscreen.\+h}!C\+A\+L\+I\+B\+R\+A\+T\+I\+O\+N\+\_\+\+M\+O\+D\+E\+\_\+\+C\+A\+L\+I\+B\+R\+A\+T\+E\+\_\+\+A\+N\+D\+\_\+\+S\+H\+O\+W\+\_\+\+V\+A\+L\+U\+E@{C\+A\+L\+I\+B\+R\+A\+T\+I\+O\+N\+\_\+\+M\+O\+D\+E\+\_\+\+C\+A\+L\+I\+B\+R\+A\+T\+E\+\_\+\+A\+N\+D\+\_\+\+S\+H\+O\+W\+\_\+\+V\+A\+L\+U\+E}}\item[{\em 
+\hypertarget{demo__touchscreen_8h_a71fca4638203182f7fa2c3402b1d7f80a544d759a7a703a0f7dd8f3c86de8a6e1}{}C\+A\+L\+I\+B\+R\+A\+T\+I\+O\+N\+\_\+\+M\+O\+D\+E\+\_\+\+C\+A\+L\+I\+B\+R\+A\+T\+E\+\_\+\+A\+N\+D\+\_\+\+S\+H\+O\+W\+\_\+\+V\+A\+L\+U\+E\label{demo__touchscreen_8h_a71fca4638203182f7fa2c3402b1d7f80a544d759a7a703a0f7dd8f3c86de8a6e1}
+}]\index{C\+A\+L\+I\+B\+R\+A\+T\+I\+O\+N\+\_\+\+M\+O\+D\+E\+\_\+\+C\+A\+L\+I\+B\+R\+A\+T\+E\+\_\+\+A\+N\+D\+\_\+\+S\+H\+O\+W\+\_\+\+V\+A\+L\+U\+E\+\_\+\+A\+N\+D\+\_\+\+P\+R\+O\+V\+I\+D\+E\+\_\+\+T\+E\+L\+E\+C\+R\+A\+N\+\_\+\+G\+A\+M\+E@{C\+A\+L\+I\+B\+R\+A\+T\+I\+O\+N\+\_\+\+M\+O\+D\+E\+\_\+\+C\+A\+L\+I\+B\+R\+A\+T\+E\+\_\+\+A\+N\+D\+\_\+\+S\+H\+O\+W\+\_\+\+V\+A\+L\+U\+E\+\_\+\+A\+N\+D\+\_\+\+P\+R\+O\+V\+I\+D\+E\+\_\+\+T\+E\+L\+E\+C\+R\+A\+N\+\_\+\+G\+A\+M\+E}!demo\+\_\+touchscreen.\+h@{demo\+\_\+touchscreen.\+h}}\index{demo\+\_\+touchscreen.\+h@{demo\+\_\+touchscreen.\+h}!C\+A\+L\+I\+B\+R\+A\+T\+I\+O\+N\+\_\+\+M\+O\+D\+E\+\_\+\+C\+A\+L\+I\+B\+R\+A\+T\+E\+\_\+\+A\+N\+D\+\_\+\+S\+H\+O\+W\+\_\+\+V\+A\+L\+U\+E\+\_\+\+A\+N\+D\+\_\+\+P\+R\+O\+V\+I\+D\+E\+\_\+\+T\+E\+L\+E\+C\+R\+A\+N\+\_\+\+G\+A\+M\+E@{C\+A\+L\+I\+B\+R\+A\+T\+I\+O\+N\+\_\+\+M\+O\+D\+E\+\_\+\+C\+A\+L\+I\+B\+R\+A\+T\+E\+\_\+\+A\+N\+D\+\_\+\+S\+H\+O\+W\+\_\+\+V\+A\+L\+U\+E\+\_\+\+A\+N\+D\+\_\+\+P\+R\+O\+V\+I\+D\+E\+\_\+\+T\+E\+L\+E\+C\+R\+A\+N\+\_\+\+G\+A\+M\+E}}\item[{\em 
+\hypertarget{demo__touchscreen_8h_a71fca4638203182f7fa2c3402b1d7f80a02963146324d5b037fbd42ffd810bb5d}{}C\+A\+L\+I\+B\+R\+A\+T\+I\+O\+N\+\_\+\+M\+O\+D\+E\+\_\+\+C\+A\+L\+I\+B\+R\+A\+T\+E\+\_\+\+A\+N\+D\+\_\+\+S\+H\+O\+W\+\_\+\+V\+A\+L\+U\+E\+\_\+\+A\+N\+D\+\_\+\+P\+R\+O\+V\+I\+D\+E\+\_\+\+T\+E\+L\+E\+C\+R\+A\+N\+\_\+\+G\+A\+M\+E\label{demo__touchscreen_8h_a71fca4638203182f7fa2c3402b1d7f80a02963146324d5b037fbd42ffd810bb5d}
+}]\end{description}
+\end{Desc}
+
+
+Definition at line 49 of file demo\+\_\+touchscreen.\+h.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{demo__touchscreen_8h_abc079c56bcb004b0a01e83c86fdaac04}{}\index{demo\+\_\+touchscreen.\+h@{demo\+\_\+touchscreen.\+h}!T\+S\+\_\+\+Calibration@{T\+S\+\_\+\+Calibration}}
+\index{T\+S\+\_\+\+Calibration@{T\+S\+\_\+\+Calibration}!demo\+\_\+touchscreen.\+h@{demo\+\_\+touchscreen.\+h}}
+\subsubsection[{T\+S\+\_\+\+Calibration(bool\+\_\+e ask\+\_\+for\+\_\+finish, T\+S\+\_\+\+Calibration\+\_\+mode\+\_\+e mode)}]{\setlength{\rightskip}{0pt plus 5cm}running\+\_\+e T\+S\+\_\+\+Calibration (
+\begin{DoxyParamCaption}
+\item[{bool\+\_\+e}]{ask\+\_\+for\+\_\+finish, }
+\item[{{\bf T\+S\+\_\+\+Calibration\+\_\+mode\+\_\+e}}]{mode}
+\end{DoxyParamCaption}
+)}\label{demo__touchscreen_8h_abc079c56bcb004b0a01e83c86fdaac04}
+
+
+Calibre l\textquotesingle{}écran tactile. 
+
+\begin{DoxyPrecond}{Precondition}
+Cette fonction doit être appelée en boucle jusqu\textquotesingle{}à ce qu\textquotesingle{}elle renvoit T\+R\+U\+E (calibration terminée). 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+Lors de l\textquotesingle{}état I\+N\+I\+T, l\textquotesingle{}appel à \hyperlink{demo__touchscreen_8c_aa4684d3435eb6381e44d133c627134a4}{T\+S\+\_\+\+Init()} est réalisé. 
+\end{DoxyPostcond}
+
+\begin{DoxyRetVals}{Return values}
+{\em E\+N\+D\+\_\+\+O\+K} & si la calibration est terminée, I\+N\+\_\+\+P\+R\+O\+G\+R\+E\+S\+S sinon.\\
+\hline
+\end{DoxyRetVals}
+
+\begin{DoxyParams}{Parameters}
+{\em mode} & le mode de calibration (\hyperlink{demo__touchscreen_8h_a71fca4638203182f7fa2c3402b1d7f80}{T\+S\+\_\+\+Calibration\+\_\+mode\+\_\+e}) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+Cette fonction doit être appelée en boucle jusqu\textquotesingle{}à ce qu\textquotesingle{}elle renvoit T\+R\+U\+E (calibration terminée). 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+Lors de l\textquotesingle{}état I\+N\+I\+T, l\textquotesingle{}appel à \hyperlink{demo__touchscreen_8c_aa4684d3435eb6381e44d133c627134a4}{T\+S\+\_\+\+Init()} est réalisé. 
+\end{DoxyPostcond}
+
+\begin{DoxyRetVals}{Return values}
+{\em running\+\_\+e} & E\+N\+D\+\_\+\+O\+K si la calibration est terminée, I\+N\+\_\+\+P\+R\+O\+G\+R\+E\+S\+S sinon. \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line 63 of file demo\+\_\+touchscreen.\+c.
+
+\hypertarget{demo__touchscreen_8h_aaa871c874f78e1dde4c31f22aa6d9e1a}{}\index{demo\+\_\+touchscreen.\+h@{demo\+\_\+touchscreen.\+h}!T\+S\+\_\+\+Get\+\_\+\+Filtered\+\_\+\+Touch@{T\+S\+\_\+\+Get\+\_\+\+Filtered\+\_\+\+Touch}}
+\index{T\+S\+\_\+\+Get\+\_\+\+Filtered\+\_\+\+Touch@{T\+S\+\_\+\+Get\+\_\+\+Filtered\+\_\+\+Touch}!demo\+\_\+touchscreen.\+h@{demo\+\_\+touchscreen.\+h}}
+\subsubsection[{T\+S\+\_\+\+Get\+\_\+\+Filtered\+\_\+\+Touch(\+T\+S\+\_\+\+A\+D\+C $\ast$ts\+\_\+adc)}]{\setlength{\rightskip}{0pt plus 5cm}bool\+\_\+e T\+S\+\_\+\+Get\+\_\+\+Filtered\+\_\+\+Touch (
+\begin{DoxyParamCaption}
+\item[{{\bf T\+S\+\_\+\+A\+D\+C} $\ast$}]{ts\+\_\+adc}
+\end{DoxyParamCaption}
+)}\label{demo__touchscreen_8h_aaa871c874f78e1dde4c31f22aa6d9e1a}
+
+
+Retourne les valeurs filtrées (moyenne) issues de la conversion analogique numérique issue du L\+C\+D. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \hyperlink{struct_t_s___a_d_c}{T\+S\+\_\+\+A\+D\+C}} & $\ast$ \+: pointeur vers une structure qui contient les valeurs issues de la conversion analogique numérique issue du L\+C\+D\\
+\hline
+\end{DoxyRetVals}
+Retourne les valeurs filtrées (moyenne) issues de la conversion analogique numérique issue du L\+C\+D.
+
+
+\begin{DoxyParams}{Parameters}
+{\em $\ast$ts\+\_\+adc} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em bool\+\_\+e} & pointeur vers une structure qui contient les valeurs issues de la conversion analogique numérique issue du L\+C\+D \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line 313 of file demo\+\_\+touchscreen.\+c.
+
+\hypertarget{demo__touchscreen_8h_abab6fb4efbb0e34bc95ab7b28de83537}{}\index{demo\+\_\+touchscreen.\+h@{demo\+\_\+touchscreen.\+h}!T\+S\+\_\+\+Get\+\_\+\+Touch@{T\+S\+\_\+\+Get\+\_\+\+Touch}}
+\index{T\+S\+\_\+\+Get\+\_\+\+Touch@{T\+S\+\_\+\+Get\+\_\+\+Touch}!demo\+\_\+touchscreen.\+h@{demo\+\_\+touchscreen.\+h}}
+\subsubsection[{T\+S\+\_\+\+Get\+\_\+\+Touch(uint16\+\_\+t $\ast$x, uint16\+\_\+t $\ast$y)}]{\setlength{\rightskip}{0pt plus 5cm}bool\+\_\+e T\+S\+\_\+\+Get\+\_\+\+Touch (
+\begin{DoxyParamCaption}
+\item[{uint16\+\_\+t $\ast$}]{x, }
+\item[{uint16\+\_\+t $\ast$}]{y}
+\end{DoxyParamCaption}
+)}\label{demo__touchscreen_8h_abab6fb4efbb0e34bc95ab7b28de83537}
+
+
+Retourne les coordonnées en X et en Y de l\textquotesingle{}endroit appuyé sur l\textquotesingle{}écran. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ts\+\_\+adc} & $\ast$ \+: pointeur vers une structure qui contient les valeurs issues de la conversion analogique numérique issue du L\+C\+D \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em uint16\+\_\+t} & \+: 0 si l\textquotesingle{}écran n\textquotesingle{}est pas appuyé, un entier non nul sinon\\
+\hline
+\end{DoxyRetVals}
+
+\begin{DoxyParams}{Parameters}
+{\em x} & \+: abscisse à mettre à jour \\
+\hline
+{\em y} & \+: ordonnée à mettre à jour \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \+\_\+\+Bool} & \+: F\+A\+L\+S\+E si l\textquotesingle{}écran n\textquotesingle{}est pas appuyé, T\+R\+U\+E sinon. \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line 290 of file demo\+\_\+touchscreen.\+c.
+
+\hypertarget{demo__touchscreen_8h_aa4684d3435eb6381e44d133c627134a4}{}\index{demo\+\_\+touchscreen.\+h@{demo\+\_\+touchscreen.\+h}!T\+S\+\_\+\+Init@{T\+S\+\_\+\+Init}}
+\index{T\+S\+\_\+\+Init@{T\+S\+\_\+\+Init}!demo\+\_\+touchscreen.\+h@{demo\+\_\+touchscreen.\+h}}
+\subsubsection[{T\+S\+\_\+\+Init(void)}]{\setlength{\rightskip}{0pt plus 5cm}void T\+S\+\_\+\+Init (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{demo__touchscreen_8h_aa4684d3435eb6381e44d133c627134a4}
+
+
+Initialise les ports utilisés par l\textquotesingle{}écran tactile et initialise les coefficients avec des valeurs par défaut. 
+
+\begin{DoxyPrecond}{Precondition}
+cette fonction doit être appelée avant tout appel à l\textquotesingle{}écran tactile. 
+\end{DoxyPrecond}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+cette fonction doit être appelée avant tout appel à l\textquotesingle{}écran tactile. 
+\end{DoxyPrecond}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line 38 of file demo\+\_\+touchscreen.\+c.
+
+\hypertarget{demo__touchscreen_8h_ade23bc87d65f74a6ba6afd1e11fa6e4c}{}\index{demo\+\_\+touchscreen.\+h@{demo\+\_\+touchscreen.\+h}!T\+S\+\_\+is\+\_\+initialized@{T\+S\+\_\+is\+\_\+initialized}}
+\index{T\+S\+\_\+is\+\_\+initialized@{T\+S\+\_\+is\+\_\+initialized}!demo\+\_\+touchscreen.\+h@{demo\+\_\+touchscreen.\+h}}
+\subsubsection[{T\+S\+\_\+is\+\_\+initialized(void)}]{\setlength{\rightskip}{0pt plus 5cm}bool\+\_\+e T\+S\+\_\+is\+\_\+initialized (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{demo__touchscreen_8h_ade23bc87d65f74a6ba6afd1e11fa6e4c}
+
+
+Retourne l\textquotesingle{}état d\textquotesingle{}initialisation du module T\+S. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em T\+R\+U\+E} & si le module T\+S est initialisé \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line 51 of file demo\+\_\+touchscreen.\+c.
+
+\hypertarget{demo__touchscreen_8h_a4fa22907c3f024d4f6a3744e7ad2096b}{}\index{demo\+\_\+touchscreen.\+h@{demo\+\_\+touchscreen.\+h}!T\+S\+\_\+process\+\_\+1ms@{T\+S\+\_\+process\+\_\+1ms}}
+\index{T\+S\+\_\+process\+\_\+1ms@{T\+S\+\_\+process\+\_\+1ms}!demo\+\_\+touchscreen.\+h@{demo\+\_\+touchscreen.\+h}}
+\subsubsection[{T\+S\+\_\+process\+\_\+1ms(void)}]{\setlength{\rightskip}{0pt plus 5cm}void T\+S\+\_\+process\+\_\+1ms (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{demo__touchscreen_8h_a4fa22907c3f024d4f6a3744e7ad2096b}
+
+
+Fonction appelee toutes les ms par la routine d\textquotesingle{}interruption du timer2. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em none} & \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line 338 of file demo\+\_\+touchscreen.\+c.
+

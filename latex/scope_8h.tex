@@ -1,0 +1,159 @@
+\hypertarget{scope_8h}{}\section{appli/mylibs/scope.h File Reference}
+\label{scope_8h}\index{appli/mylibs/scope.\+h@{appli/mylibs/scope.\+h}}
+
+
+Contient les prototypes des fonctions de gestion de l\textquotesingle{}oscilloscope.  
+
+
+{\ttfamily \#include \char`\"{}stm32f4\+\_\+lcd.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}lcd\+\_\+display\+\_\+form\+\_\+and\+\_\+text.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}colors.\+h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{scope_8h_a530792142b51cc844b71b295a37107bd}{Screen\+Init\+Graphics} (void)
+\begin{DoxyCompactList}\small\item\em Initialise le fond de l\textquotesingle{}écran et la police utilisée. \end{DoxyCompactList}\item 
+void \hyperlink{scope_8h_a3fecc75c9669fdc077fde861e1aa6836}{Screen\+Update} (int8\+\_\+t $\ast$\hyperlink{main_8c_a0b7b30e2c7220f4f8488c63b665ae39e}{data\+\_\+scope}, char \hyperlink{main_8c_a7e88121c12c9f8bb6761d0186036fed9}{copy\+Channel1}, int8\+\_\+t $\ast$\hyperlink{main_8c_a83ef74f31d16552f39ca5ddcd3c45fee}{data\+\_\+scope\+\_\+mem}, int8\+\_\+t $\ast$\hyperlink{main_8c_a5b49f9e0b8924e9beee66ddf282a34dd}{data\+\_\+scope2}, char \hyperlink{main_8c_a85e942f97f6dfffa67dab2bbc1634210}{copy\+Channel2}, int8\+\_\+t $\ast$\hyperlink{main_8c_a4c2ffce18282086008d68dc60d21e150}{data\+\_\+scope\+\_\+mem2}, char \hyperlink{main_8c_a939a13ca928c202ce8150c8c1f663690}{copy\+Channel\+Math}, int8\+\_\+t $\ast$\hyperlink{main_8c_a87f03f01fb52795980aa012dadf7e9c2}{data\+\_\+scope\+\_\+math}, char $\ast$\hyperlink{main_8c_a66ccd72309ad1f50a5d20dff30b28144}{text\+Maths}, int16\+\_\+t \hyperlink{main_8c_a5464f471cb48f73ce809465115dba9de}{cursor\+A}, char $\ast$\hyperlink{main_8c_a053b964422ea57a684111651604b29eb}{text\+Cursor\+A}, int16\+\_\+t \hyperlink{main_8c_a6dc707c8a44ced30bca430b959ef085a}{cursor\+B}, char $\ast$\hyperlink{main_8c_a5586efe73ef899f908b6ec51250ada23}{text\+Cursor\+B})
+\begin{DoxyCompactList}\small\item\em Met à jour l\textquotesingle{}écran du scope \+: Oscar de la fonction avec le plus de paramètres. \end{DoxyCompactList}\item 
+float \hyperlink{scope_8h_ab856bc1164d7aa75675053c4c66bc65e}{pixel\+To\+Volt} (uint8\+\_\+t val\+Y)
+\begin{DoxyCompactList}\small\item\em Permet de convertir une valeur en pixel horizontal sur l\textquotesingle{}écran en volt (depuis l\textquotesingle{}écran virtuel du scope) Haut de l\textquotesingle{}écran \+: y = 36 pixels =$>$ V = 3.\+3\+V (convertisseur A\+D\+C 256 bits) Bas de l\textquotesingle{}écran \+: y = 236 pixels =$>$ V = 0.\+0\+V. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const char $\ast$ \hyperlink{scope_8h_a821fd80a8898907c899d6bec24973d8c}{S\+T\+R\+\_\+\+B\+U\+T\+T\+O\+N\+S\+\_\+\+V\+A\+L\+U\+E\+S} \mbox{[}$\,$\mbox{]}
+\begin{DoxyCompactList}\small\item\em Texte des boutons tactiles. \end{DoxyCompactList}\item 
+const uint16\+\_\+t \hyperlink{scope_8h_aadbc1240812b0ca157e2a93cf8ce6afc}{C\+O\+L\+O\+R\+S\+\_\+\+B\+U\+T\+T\+O\+N\+S\+\_\+\+V\+A\+L\+U\+E\+S} \mbox{[}$\,$\mbox{]}
+\begin{DoxyCompactList}\small\item\em Couleurs des boutons tactiles (en R\+B\+G565) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Contient les prototypes des fonctions de gestion de l\textquotesingle{}oscilloscope. 
+
+\begin{DoxyAuthor}{Author}
+François Leparoux 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+2 
+\end{DoxyVersion}
+
+
+\subsection{Function Documentation}
+\hypertarget{scope_8h_ab856bc1164d7aa75675053c4c66bc65e}{}\index{scope.\+h@{scope.\+h}!pixel\+To\+Volt@{pixel\+To\+Volt}}
+\index{pixel\+To\+Volt@{pixel\+To\+Volt}!scope.\+h@{scope.\+h}}
+\subsubsection[{pixel\+To\+Volt(uint8\+\_\+t val\+Y)}]{\setlength{\rightskip}{0pt plus 5cm}float pixel\+To\+Volt (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t}]{val\+Y}
+\end{DoxyParamCaption}
+)}\label{scope_8h_ab856bc1164d7aa75675053c4c66bc65e}
+
+
+Permet de convertir une valeur en pixel horizontal sur l\textquotesingle{}écran en volt (depuis l\textquotesingle{}écran virtuel du scope) Haut de l\textquotesingle{}écran \+: y = 36 pixels =$>$ V = 3.\+3\+V (convertisseur A\+D\+C 256 bits) Bas de l\textquotesingle{}écran \+: y = 236 pixels =$>$ V = 0.\+0\+V. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em val\+Y} & la valeur en pixels verticaux de la positon du curseur à mesurer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+La valeur en volt de la mesure curseur 
+\end{DoxyReturn}
+
+
+Definition at line 101 of file scope.\+c.
+
+\hypertarget{scope_8h_a530792142b51cc844b71b295a37107bd}{}\index{scope.\+h@{scope.\+h}!Screen\+Init\+Graphics@{Screen\+Init\+Graphics}}
+\index{Screen\+Init\+Graphics@{Screen\+Init\+Graphics}!scope.\+h@{scope.\+h}}
+\subsubsection[{Screen\+Init\+Graphics(void)}]{\setlength{\rightskip}{0pt plus 5cm}void Screen\+Init\+Graphics (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{scope_8h_a530792142b51cc844b71b295a37107bd}
+
+
+Initialise le fond de l\textquotesingle{}écran et la police utilisée. 
+
+
+
+Definition at line 23 of file scope.\+c.
+
+\hypertarget{scope_8h_a3fecc75c9669fdc077fde861e1aa6836}{}\index{scope.\+h@{scope.\+h}!Screen\+Update@{Screen\+Update}}
+\index{Screen\+Update@{Screen\+Update}!scope.\+h@{scope.\+h}}
+\subsubsection[{Screen\+Update(int8\+\_\+t $\ast$data\+\_\+scope, char copy\+Channel1, int8\+\_\+t $\ast$data\+\_\+scope\+\_\+mem, int8\+\_\+t $\ast$data\+\_\+scope2, char copy\+Channel2, int8\+\_\+t $\ast$data\+\_\+scope\+\_\+mem2, char copy\+Channel\+Math, int8\+\_\+t $\ast$data\+\_\+scope\+\_\+math, char $\ast$text\+Maths, int16\+\_\+t cursor\+A, char $\ast$text\+Cursor\+A, int16\+\_\+t cursor\+B, char $\ast$text\+Cursor\+B)}]{\setlength{\rightskip}{0pt plus 5cm}void Screen\+Update (
+\begin{DoxyParamCaption}
+\item[{int8\+\_\+t $\ast$}]{data\+\_\+scope, }
+\item[{char}]{copy\+Channel1, }
+\item[{int8\+\_\+t $\ast$}]{data\+\_\+scope\+\_\+mem, }
+\item[{int8\+\_\+t $\ast$}]{data\+\_\+scope2, }
+\item[{char}]{copy\+Channel2, }
+\item[{int8\+\_\+t $\ast$}]{data\+\_\+scope\+\_\+mem2, }
+\item[{char}]{copy\+Channel\+Math, }
+\item[{int8\+\_\+t $\ast$}]{data\+\_\+scope\+\_\+math, }
+\item[{char $\ast$}]{text\+Maths, }
+\item[{int16\+\_\+t}]{cursor\+A, }
+\item[{char $\ast$}]{text\+Cursor\+A, }
+\item[{int16\+\_\+t}]{cursor\+B, }
+\item[{char $\ast$}]{text\+Cursor\+B}
+\end{DoxyParamCaption}
+)}\label{scope_8h_a3fecc75c9669fdc077fde861e1aa6836}
+
+
+Met à jour l\textquotesingle{}écran du scope \+: Oscar de la fonction avec le plus de paramètres. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data\+\_\+scope} & Le tableau des valeurs de C\+H1 \\
+\hline
+{\em data\+\_\+scope2} & Le tableau des valeurs de C\+H2 \\
+\hline
+{\em data\+\_\+scope\+\_\+mem} & Le tableau des valeurs de C\+H1 mémoire \\
+\hline
+{\em data\+\_\+scope\+\_\+mem2} & Le tableau des valeurs de C\+H2 mémoire \\
+\hline
+{\em data\+\_\+scope\+\_\+math} & Le tableau des valeurs de la fonction Math \\
+\hline
+{\em copy\+Channel1} & La variable permettant d\textquotesingle{}afficher ou non le signal C\+H1 mem à l\textquotesingle{}écran \\
+\hline
+{\em copy\+Channel2} & La variable permettant d\textquotesingle{}afficher ou non le signal C\+H2 mem à l\textquotesingle{}écran \\
+\hline
+{\em copy\+Channel\+Math} & La variable permettant d\textquotesingle{}afficher ou non le sigal issu de la fonction math à l\textquotesingle{}écran \\
+\hline
+{\em cursor\+A} & La valeur du positionnement vertical du curseur A \\
+\hline
+{\em cursor\+B} & La valeur du positionnement vertical du curseur B \\
+\hline
+{\em text\+Maths} & Le texte associé à l\textquotesingle{}état actuel de la fonction math (son mode, l\textquotesingle{}opération effectuée, etc) \\
+\hline
+{\em text\+Cursor\+A} & Le texte indiquant la valeur mesurée par le curseur A \\
+\hline
+{\em text\+Cursor\+B} & Le texte indiquant la valeur mesurée par le curseur B \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 44 of file scope.\+c.
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{scope_8h_aadbc1240812b0ca157e2a93cf8ce6afc}{}\index{scope.\+h@{scope.\+h}!C\+O\+L\+O\+R\+S\+\_\+\+B\+U\+T\+T\+O\+N\+S\+\_\+\+V\+A\+L\+U\+E\+S@{C\+O\+L\+O\+R\+S\+\_\+\+B\+U\+T\+T\+O\+N\+S\+\_\+\+V\+A\+L\+U\+E\+S}}
+\index{C\+O\+L\+O\+R\+S\+\_\+\+B\+U\+T\+T\+O\+N\+S\+\_\+\+V\+A\+L\+U\+E\+S@{C\+O\+L\+O\+R\+S\+\_\+\+B\+U\+T\+T\+O\+N\+S\+\_\+\+V\+A\+L\+U\+E\+S}!scope.\+h@{scope.\+h}}
+\subsubsection[{C\+O\+L\+O\+R\+S\+\_\+\+B\+U\+T\+T\+O\+N\+S\+\_\+\+V\+A\+L\+U\+E\+S}]{\setlength{\rightskip}{0pt plus 5cm}const uint16\+\_\+t C\+O\+L\+O\+R\+S\+\_\+\+B\+U\+T\+T\+O\+N\+S\+\_\+\+V\+A\+L\+U\+E\+S\mbox{[}$\,$\mbox{]}}\label{scope_8h_aadbc1240812b0ca157e2a93cf8ce6afc}
+
+
+Couleurs des boutons tactiles (en R\+B\+G565) 
+
+
+
+Definition at line 18 of file scope.\+c.
+
+\hypertarget{scope_8h_a821fd80a8898907c899d6bec24973d8c}{}\index{scope.\+h@{scope.\+h}!S\+T\+R\+\_\+\+B\+U\+T\+T\+O\+N\+S\+\_\+\+V\+A\+L\+U\+E\+S@{S\+T\+R\+\_\+\+B\+U\+T\+T\+O\+N\+S\+\_\+\+V\+A\+L\+U\+E\+S}}
+\index{S\+T\+R\+\_\+\+B\+U\+T\+T\+O\+N\+S\+\_\+\+V\+A\+L\+U\+E\+S@{S\+T\+R\+\_\+\+B\+U\+T\+T\+O\+N\+S\+\_\+\+V\+A\+L\+U\+E\+S}!scope.\+h@{scope.\+h}}
+\subsubsection[{S\+T\+R\+\_\+\+B\+U\+T\+T\+O\+N\+S\+\_\+\+V\+A\+L\+U\+E\+S}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ S\+T\+R\+\_\+\+B\+U\+T\+T\+O\+N\+S\+\_\+\+V\+A\+L\+U\+E\+S\mbox{[}$\,$\mbox{]}}\label{scope_8h_a821fd80a8898907c899d6bec24973d8c}
+
+
+Texte des boutons tactiles. 
+
+
+
+Definition at line 13 of file scope.\+c.
+

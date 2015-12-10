@@ -1,0 +1,106 @@
+\hypertarget{sdcard_8h}{}\section{appli/mylibs/sdcard.h File Reference}
+\label{sdcard_8h}\index{appli/mylibs/sdcard.\+h@{appli/mylibs/sdcard.\+h}}
+
+
+Contient le prototype de la machine à état de gestion de la carte S\+D.  
+
+
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{sdcard_8h_a52b77dcd6180d54d314b8cbf0b4dc2d9}{state\+\_\+e} \{ \\*
+\hyperlink{sdcard_8h_a52b77dcd6180d54d314b8cbf0b4dc2d9a0cb1b2c6a7db1f1084886c98909a3f36}{I\+N\+I\+T} = 0, 
+\hyperlink{sdcard_8h_a52b77dcd6180d54d314b8cbf0b4dc2d9abe8c81f9db8320b327f4fe513a1a873b}{M\+O\+U\+N\+T}, 
+\hyperlink{sdcard_8h_a52b77dcd6180d54d314b8cbf0b4dc2d9a4bf41a333f478de18cc7e6cd6e9ba44f}{P\+R\+E\+P\+A\+R\+E\+\_\+\+W\+R\+I\+T\+E}, 
+\hyperlink{sdcard_8h_a52b77dcd6180d54d314b8cbf0b4dc2d9aff6ae5028dac37f3956994fd5fc9715b}{W\+R\+I\+T\+E\+\_\+\+T\+E\+S\+T\+\_\+\+F\+I\+L\+E}, 
+\\*
+\hyperlink{sdcard_8h_a52b77dcd6180d54d314b8cbf0b4dc2d9adca38aa1162f2ac368b046e4c209e851}{R\+E\+A\+D\+\_\+\+T\+E\+S\+T\+\_\+\+F\+I\+L\+E}, 
+\hyperlink{sdcard_8h_a52b77dcd6180d54d314b8cbf0b4dc2d9af314bd85d988ebbfdefb99dd5423a955}{D\+E\+L\+E\+T\+E\+\_\+\+T\+E\+S\+T\+\_\+\+F\+I\+L\+E}, 
+\hyperlink{sdcard_8h_a52b77dcd6180d54d314b8cbf0b4dc2d9acc10cf3800ecfef9523feb7c3c18ebb7}{E\+N\+D\+\_\+\+W\+I\+T\+H\+\_\+\+E\+R\+R\+O\+R}, 
+\hyperlink{sdcard_8h_a52b77dcd6180d54d314b8cbf0b4dc2d9afd6a0e4343048b10646dd2976cc5ad18}{I\+D\+L\+E}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{sdcard_8h_a78776c52434a7aa0aae60a4e102d98f0}{S\+D\+Card\+Machine} (void)
+\begin{DoxyCompactList}\small\item\em Machine à état permettant la capture d\textquotesingle{}écran puis l\textquotesingle{}enregistrement sur carte S\+D. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{unionstate__e}{state\+\_\+e} \hyperlink{sdcard_8h_a54074472aa252aa9fdabf64fa2ee8b8a}{status}
+\begin{DoxyCompactList}\small\item\em Le statut courant de la machine à états de la carte S\+D. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Contient le prototype de la machine à état de gestion de la carte S\+D. 
+
+\begin{DoxyAuthor}{Author}
+François Leparoux 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+4 
+\end{DoxyVersion}
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{sdcard_8h_a52b77dcd6180d54d314b8cbf0b4dc2d9}{}\index{sdcard.\+h@{sdcard.\+h}!state\+\_\+e@{state\+\_\+e}}
+\index{state\+\_\+e@{state\+\_\+e}!sdcard.\+h@{sdcard.\+h}}
+\subsubsection[{state\+\_\+e}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf state\+\_\+e}}\label{sdcard_8h_a52b77dcd6180d54d314b8cbf0b4dc2d9}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{I\+N\+I\+T@{I\+N\+I\+T}!sdcard.\+h@{sdcard.\+h}}\index{sdcard.\+h@{sdcard.\+h}!I\+N\+I\+T@{I\+N\+I\+T}}\item[{\em 
+\hypertarget{sdcard_8h_a52b77dcd6180d54d314b8cbf0b4dc2d9a0cb1b2c6a7db1f1084886c98909a3f36}{}I\+N\+I\+T\label{sdcard_8h_a52b77dcd6180d54d314b8cbf0b4dc2d9a0cb1b2c6a7db1f1084886c98909a3f36}
+}]\index{M\+O\+U\+N\+T@{M\+O\+U\+N\+T}!sdcard.\+h@{sdcard.\+h}}\index{sdcard.\+h@{sdcard.\+h}!M\+O\+U\+N\+T@{M\+O\+U\+N\+T}}\item[{\em 
+\hypertarget{sdcard_8h_a52b77dcd6180d54d314b8cbf0b4dc2d9abe8c81f9db8320b327f4fe513a1a873b}{}M\+O\+U\+N\+T\label{sdcard_8h_a52b77dcd6180d54d314b8cbf0b4dc2d9abe8c81f9db8320b327f4fe513a1a873b}
+}]\index{P\+R\+E\+P\+A\+R\+E\+\_\+\+W\+R\+I\+T\+E@{P\+R\+E\+P\+A\+R\+E\+\_\+\+W\+R\+I\+T\+E}!sdcard.\+h@{sdcard.\+h}}\index{sdcard.\+h@{sdcard.\+h}!P\+R\+E\+P\+A\+R\+E\+\_\+\+W\+R\+I\+T\+E@{P\+R\+E\+P\+A\+R\+E\+\_\+\+W\+R\+I\+T\+E}}\item[{\em 
+\hypertarget{sdcard_8h_a52b77dcd6180d54d314b8cbf0b4dc2d9a4bf41a333f478de18cc7e6cd6e9ba44f}{}P\+R\+E\+P\+A\+R\+E\+\_\+\+W\+R\+I\+T\+E\label{sdcard_8h_a52b77dcd6180d54d314b8cbf0b4dc2d9a4bf41a333f478de18cc7e6cd6e9ba44f}
+}]\index{W\+R\+I\+T\+E\+\_\+\+T\+E\+S\+T\+\_\+\+F\+I\+L\+E@{W\+R\+I\+T\+E\+\_\+\+T\+E\+S\+T\+\_\+\+F\+I\+L\+E}!sdcard.\+h@{sdcard.\+h}}\index{sdcard.\+h@{sdcard.\+h}!W\+R\+I\+T\+E\+\_\+\+T\+E\+S\+T\+\_\+\+F\+I\+L\+E@{W\+R\+I\+T\+E\+\_\+\+T\+E\+S\+T\+\_\+\+F\+I\+L\+E}}\item[{\em 
+\hypertarget{sdcard_8h_a52b77dcd6180d54d314b8cbf0b4dc2d9aff6ae5028dac37f3956994fd5fc9715b}{}W\+R\+I\+T\+E\+\_\+\+T\+E\+S\+T\+\_\+\+F\+I\+L\+E\label{sdcard_8h_a52b77dcd6180d54d314b8cbf0b4dc2d9aff6ae5028dac37f3956994fd5fc9715b}
+}]\index{R\+E\+A\+D\+\_\+\+T\+E\+S\+T\+\_\+\+F\+I\+L\+E@{R\+E\+A\+D\+\_\+\+T\+E\+S\+T\+\_\+\+F\+I\+L\+E}!sdcard.\+h@{sdcard.\+h}}\index{sdcard.\+h@{sdcard.\+h}!R\+E\+A\+D\+\_\+\+T\+E\+S\+T\+\_\+\+F\+I\+L\+E@{R\+E\+A\+D\+\_\+\+T\+E\+S\+T\+\_\+\+F\+I\+L\+E}}\item[{\em 
+\hypertarget{sdcard_8h_a52b77dcd6180d54d314b8cbf0b4dc2d9adca38aa1162f2ac368b046e4c209e851}{}R\+E\+A\+D\+\_\+\+T\+E\+S\+T\+\_\+\+F\+I\+L\+E\label{sdcard_8h_a52b77dcd6180d54d314b8cbf0b4dc2d9adca38aa1162f2ac368b046e4c209e851}
+}]\index{D\+E\+L\+E\+T\+E\+\_\+\+T\+E\+S\+T\+\_\+\+F\+I\+L\+E@{D\+E\+L\+E\+T\+E\+\_\+\+T\+E\+S\+T\+\_\+\+F\+I\+L\+E}!sdcard.\+h@{sdcard.\+h}}\index{sdcard.\+h@{sdcard.\+h}!D\+E\+L\+E\+T\+E\+\_\+\+T\+E\+S\+T\+\_\+\+F\+I\+L\+E@{D\+E\+L\+E\+T\+E\+\_\+\+T\+E\+S\+T\+\_\+\+F\+I\+L\+E}}\item[{\em 
+\hypertarget{sdcard_8h_a52b77dcd6180d54d314b8cbf0b4dc2d9af314bd85d988ebbfdefb99dd5423a955}{}D\+E\+L\+E\+T\+E\+\_\+\+T\+E\+S\+T\+\_\+\+F\+I\+L\+E\label{sdcard_8h_a52b77dcd6180d54d314b8cbf0b4dc2d9af314bd85d988ebbfdefb99dd5423a955}
+}]\index{E\+N\+D\+\_\+\+W\+I\+T\+H\+\_\+\+E\+R\+R\+O\+R@{E\+N\+D\+\_\+\+W\+I\+T\+H\+\_\+\+E\+R\+R\+O\+R}!sdcard.\+h@{sdcard.\+h}}\index{sdcard.\+h@{sdcard.\+h}!E\+N\+D\+\_\+\+W\+I\+T\+H\+\_\+\+E\+R\+R\+O\+R@{E\+N\+D\+\_\+\+W\+I\+T\+H\+\_\+\+E\+R\+R\+O\+R}}\item[{\em 
+\hypertarget{sdcard_8h_a52b77dcd6180d54d314b8cbf0b4dc2d9acc10cf3800ecfef9523feb7c3c18ebb7}{}E\+N\+D\+\_\+\+W\+I\+T\+H\+\_\+\+E\+R\+R\+O\+R\label{sdcard_8h_a52b77dcd6180d54d314b8cbf0b4dc2d9acc10cf3800ecfef9523feb7c3c18ebb7}
+}]\index{I\+D\+L\+E@{I\+D\+L\+E}!sdcard.\+h@{sdcard.\+h}}\index{sdcard.\+h@{sdcard.\+h}!I\+D\+L\+E@{I\+D\+L\+E}}\item[{\em 
+\hypertarget{sdcard_8h_a52b77dcd6180d54d314b8cbf0b4dc2d9afd6a0e4343048b10646dd2976cc5ad18}{}I\+D\+L\+E\label{sdcard_8h_a52b77dcd6180d54d314b8cbf0b4dc2d9afd6a0e4343048b10646dd2976cc5ad18}
+}]\end{description}
+\end{Desc}
+
+
+Definition at line 16 of file sdcard.\+h.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{sdcard_8h_a78776c52434a7aa0aae60a4e102d98f0}{}\index{sdcard.\+h@{sdcard.\+h}!S\+D\+Card\+Machine@{S\+D\+Card\+Machine}}
+\index{S\+D\+Card\+Machine@{S\+D\+Card\+Machine}!sdcard.\+h@{sdcard.\+h}}
+\subsubsection[{S\+D\+Card\+Machine(void)}]{\setlength{\rightskip}{0pt plus 5cm}void S\+D\+Card\+Machine (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{sdcard_8h_a78776c52434a7aa0aae60a4e102d98f0}
+
+
+Machine à état permettant la capture d\textquotesingle{}écran puis l\textquotesingle{}enregistrement sur carte S\+D. 
+
+
+
+Definition at line 29 of file sdcard.\+c.
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{sdcard_8h_a54074472aa252aa9fdabf64fa2ee8b8a}{}\index{sdcard.\+h@{sdcard.\+h}!status@{status}}
+\index{status@{status}!sdcard.\+h@{sdcard.\+h}}
+\subsubsection[{status}]{\setlength{\rightskip}{0pt plus 5cm}{\bf state\+\_\+e} status}\label{sdcard_8h_a54074472aa252aa9fdabf64fa2ee8b8a}
+
+
+Le statut courant de la machine à états de la carte S\+D. 
+
+
+
+Definition at line 24 of file sdcard.\+c.
+

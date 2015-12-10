@@ -1,0 +1,311 @@
+\hypertarget{main_8c}{}\section{appli/main.c File Reference}
+\label{main_8c}\index{appli/main.\+c@{appli/main.\+c}}
+
+
+Contient le code source de la tâche de fond (main)  
+
+
+{\ttfamily \#include \char`\"{}stm32f4xx\+\_\+hal.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}macro\+\_\+types.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}main.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}config.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}lcd\+\_\+display\+\_\+form\+\_\+and\+\_\+text.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$string.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}stm32f4\+\_\+gpio.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}stm32f4\+\_\+lcd.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}demo\+\_\+touchscreen.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}stdlib.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}mylibs/viewcontroller.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}mylibs/sdcard.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}mylibs/scope.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}mylibs/bmpfile.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}mylibs/dmaadc.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}mylibs/colors.\+h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{main_8c_a840291bc02cba5474a4cb46a9b9566fe}{main} (void)
+\begin{DoxyCompactList}\small\item\em Programme principal \+: initialisations et tâche de fond  int \hyperlink{main_8c_a840291bc02cba5474a4cb46a9b9566fe}{main(void)} \end{DoxyCompactList}\item 
+void \hyperlink{main_8c_ab94969e4f01f86c8a4c1ce3c5a47fc45}{D\+M\+A2\+\_\+\+Stream4\+\_\+\+I\+R\+Q\+Handler} ()
+\begin{DoxyCompactList}\small\item\em Inteeruption qui Se déclenche lorsque le buffer du D\+M\+A2-\/stream4 est plein (C\+H1) \end{DoxyCompactList}\item 
+void \hyperlink{main_8c_a7439a7f122dc424fd0f393ba6656d9bd}{D\+M\+A2\+\_\+\+Stream2\+\_\+\+I\+R\+Q\+Handler} ()
+\begin{DoxyCompactList}\small\item\em Inteeruption qui Se déclenche lorsque le buffer du D\+M\+A2-\/stream2 est plein (C\+H2) \end{DoxyCompactList}\item 
+void \hyperlink{main_8c_adb3e01a3e924c7c52cad43949a43e9c7}{S\+D\+I\+O\+\_\+\+I\+R\+Q\+Handler} (void)
+\item 
+void \hyperlink{main_8c_a877135f6494d6923d6f6ec32d75d9eeb}{D\+M\+A2\+\_\+\+Stream3\+\_\+\+I\+R\+Q\+Handler} (void)
+\item 
+void \hyperlink{main_8c_a76d38919f345dfea8ab0e0cd9e2c47e3}{D\+M\+A2\+\_\+\+Stream6\+\_\+\+I\+R\+Q\+Handler} (void)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+char \hyperlink{main_8c_ad2539ff4fdff2f9713c37cca32c87b0d}{text} \mbox{[}50\mbox{]}
+\item 
+char \hyperlink{main_8c_aadfad7aeab204f5210a5722dda9fbde3}{toggle} = 0
+\item 
+char \hyperlink{main_8c_a86afd2352713008b3d5d94002fc0dfa1}{enable\+\_\+copy} = 0
+\item 
+char \hyperlink{main_8c_a9170663a18fcf1a7986240800709b06b}{enable\+\_\+copy2} = 0
+\item 
+unsigned char \hyperlink{main_8c_ab36effbd4d2f9af6a0097acd75203a07}{counter} = 0
+\item 
+volatile int8\+\_\+t \hyperlink{main_8c_a0b7b30e2c7220f4f8488c63b665ae39e}{data\+\_\+scope} \mbox{[}\hyperlink{dmaadc_8h_a6b20d41d6252e9871430c242cb1a56e7}{B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+Z\+E}\mbox{]} = \{0\}
+\item 
+int8\+\_\+t \hyperlink{main_8c_a83ef74f31d16552f39ca5ddcd3c45fee}{data\+\_\+scope\+\_\+mem} \mbox{[}\hyperlink{dmaadc_8h_a6b20d41d6252e9871430c242cb1a56e7}{B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+Z\+E}\mbox{]} = \{0\}
+\item 
+volatile int8\+\_\+t \hyperlink{main_8c_a5b49f9e0b8924e9beee66ddf282a34dd}{data\+\_\+scope2} \mbox{[}\hyperlink{dmaadc_8h_a6b20d41d6252e9871430c242cb1a56e7}{B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+Z\+E}\mbox{]} = \{0\}
+\item 
+int8\+\_\+t \hyperlink{main_8c_a4c2ffce18282086008d68dc60d21e150}{data\+\_\+scope\+\_\+mem2} \mbox{[}\hyperlink{dmaadc_8h_a6b20d41d6252e9871430c242cb1a56e7}{B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+Z\+E}\mbox{]} = \{0\}
+\item 
+int8\+\_\+t \hyperlink{main_8c_a87f03f01fb52795980aa012dadf7e9c2}{data\+\_\+scope\+\_\+math} \mbox{[}\hyperlink{dmaadc_8h_a6b20d41d6252e9871430c242cb1a56e7}{B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+Z\+E}\mbox{]} = \{0\}
+\item 
+int16\+\_\+t \hyperlink{main_8c_a5464f471cb48f73ce809465115dba9de}{cursor\+A}
+\item 
+int16\+\_\+t \hyperlink{main_8c_a6dc707c8a44ced30bca430b959ef085a}{cursor\+B}
+\item 
+char \hyperlink{main_8c_a053b964422ea57a684111651604b29eb}{text\+Cursor\+A} \mbox{[}8\mbox{]}
+\item 
+char \hyperlink{main_8c_a5586efe73ef899f908b6ec51250ada23}{text\+Cursor\+B} \mbox{[}8\mbox{]}
+\item 
+char \hyperlink{main_8c_a66ccd72309ad1f50a5d20dff30b28144}{text\+Maths} \mbox{[}8\mbox{]}
+\item 
+char \hyperlink{main_8c_a7e88121c12c9f8bb6761d0186036fed9}{copy\+Channel1} = 0
+\item 
+char \hyperlink{main_8c_a85e942f97f6dfffa67dab2bbc1634210}{copy\+Channel2} = 0
+\item 
+char \hyperlink{main_8c_a939a13ca928c202ce8150c8c1f663690}{copy\+Channel\+Math} = 0
+\item 
+char \hyperlink{main_8c_a6ba6697608f6f51faf5f743ff25e14ac}{sd\+Card\+Flag} = 0
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Contient le code source de la tâche de fond (main) 
+
+
+
+\subsection{Function Documentation}
+\hypertarget{main_8c_a7439a7f122dc424fd0f393ba6656d9bd}{}\index{main.\+c@{main.\+c}!D\+M\+A2\+\_\+\+Stream2\+\_\+\+I\+R\+Q\+Handler@{D\+M\+A2\+\_\+\+Stream2\+\_\+\+I\+R\+Q\+Handler}}
+\index{D\+M\+A2\+\_\+\+Stream2\+\_\+\+I\+R\+Q\+Handler@{D\+M\+A2\+\_\+\+Stream2\+\_\+\+I\+R\+Q\+Handler}!main.\+c@{main.\+c}}
+\subsubsection[{D\+M\+A2\+\_\+\+Stream2\+\_\+\+I\+R\+Q\+Handler()}]{\setlength{\rightskip}{0pt plus 5cm}void D\+M\+A2\+\_\+\+Stream2\+\_\+\+I\+R\+Q\+Handler (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{main_8c_a7439a7f122dc424fd0f393ba6656d9bd}
+
+
+Inteeruption qui Se déclenche lorsque le buffer du D\+M\+A2-\/stream2 est plein (C\+H2) 
+
+
+
+Definition at line 276 of file main.\+c.
+
+\hypertarget{main_8c_a877135f6494d6923d6f6ec32d75d9eeb}{}\index{main.\+c@{main.\+c}!D\+M\+A2\+\_\+\+Stream3\+\_\+\+I\+R\+Q\+Handler@{D\+M\+A2\+\_\+\+Stream3\+\_\+\+I\+R\+Q\+Handler}}
+\index{D\+M\+A2\+\_\+\+Stream3\+\_\+\+I\+R\+Q\+Handler@{D\+M\+A2\+\_\+\+Stream3\+\_\+\+I\+R\+Q\+Handler}!main.\+c@{main.\+c}}
+\subsubsection[{D\+M\+A2\+\_\+\+Stream3\+\_\+\+I\+R\+Q\+Handler(void)}]{\setlength{\rightskip}{0pt plus 5cm}void D\+M\+A2\+\_\+\+Stream3\+\_\+\+I\+R\+Q\+Handler (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{main_8c_a877135f6494d6923d6f6ec32d75d9eeb}
+
+
+Definition at line 310 of file main.\+c.
+
+\hypertarget{main_8c_ab94969e4f01f86c8a4c1ce3c5a47fc45}{}\index{main.\+c@{main.\+c}!D\+M\+A2\+\_\+\+Stream4\+\_\+\+I\+R\+Q\+Handler@{D\+M\+A2\+\_\+\+Stream4\+\_\+\+I\+R\+Q\+Handler}}
+\index{D\+M\+A2\+\_\+\+Stream4\+\_\+\+I\+R\+Q\+Handler@{D\+M\+A2\+\_\+\+Stream4\+\_\+\+I\+R\+Q\+Handler}!main.\+c@{main.\+c}}
+\subsubsection[{D\+M\+A2\+\_\+\+Stream4\+\_\+\+I\+R\+Q\+Handler()}]{\setlength{\rightskip}{0pt plus 5cm}void D\+M\+A2\+\_\+\+Stream4\+\_\+\+I\+R\+Q\+Handler (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{main_8c_ab94969e4f01f86c8a4c1ce3c5a47fc45}
+
+
+Inteeruption qui Se déclenche lorsque le buffer du D\+M\+A2-\/stream4 est plein (C\+H1) 
+
+
+
+Definition at line 246 of file main.\+c.
+
+\hypertarget{main_8c_a76d38919f345dfea8ab0e0cd9e2c47e3}{}\index{main.\+c@{main.\+c}!D\+M\+A2\+\_\+\+Stream6\+\_\+\+I\+R\+Q\+Handler@{D\+M\+A2\+\_\+\+Stream6\+\_\+\+I\+R\+Q\+Handler}}
+\index{D\+M\+A2\+\_\+\+Stream6\+\_\+\+I\+R\+Q\+Handler@{D\+M\+A2\+\_\+\+Stream6\+\_\+\+I\+R\+Q\+Handler}!main.\+c@{main.\+c}}
+\subsubsection[{D\+M\+A2\+\_\+\+Stream6\+\_\+\+I\+R\+Q\+Handler(void)}]{\setlength{\rightskip}{0pt plus 5cm}void D\+M\+A2\+\_\+\+Stream6\+\_\+\+I\+R\+Q\+Handler (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{main_8c_a76d38919f345dfea8ab0e0cd9e2c47e3}
+
+
+Definition at line 314 of file main.\+c.
+
+\hypertarget{main_8c_a840291bc02cba5474a4cb46a9b9566fe}{}\index{main.\+c@{main.\+c}!main@{main}}
+\index{main@{main}!main.\+c@{main.\+c}}
+\subsubsection[{main(void)}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{main_8c_a840291bc02cba5474a4cb46a9b9566fe}
+
+
+Programme principal \+: initialisations et tâche de fond  int \hyperlink{main_8c_a840291bc02cba5474a4cb46a9b9566fe}{main(void)} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line 61 of file main.\+c.
+
+\hypertarget{main_8c_adb3e01a3e924c7c52cad43949a43e9c7}{}\index{main.\+c@{main.\+c}!S\+D\+I\+O\+\_\+\+I\+R\+Q\+Handler@{S\+D\+I\+O\+\_\+\+I\+R\+Q\+Handler}}
+\index{S\+D\+I\+O\+\_\+\+I\+R\+Q\+Handler@{S\+D\+I\+O\+\_\+\+I\+R\+Q\+Handler}!main.\+c@{main.\+c}}
+\subsubsection[{S\+D\+I\+O\+\_\+\+I\+R\+Q\+Handler(void)}]{\setlength{\rightskip}{0pt plus 5cm}void S\+D\+I\+O\+\_\+\+I\+R\+Q\+Handler (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{main_8c_adb3e01a3e924c7c52cad43949a43e9c7}
+S\+D Card interrupt (N\+V\+I\+C) management 
+
+Definition at line 306 of file main.\+c.
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{main_8c_a7e88121c12c9f8bb6761d0186036fed9}{}\index{main.\+c@{main.\+c}!copy\+Channel1@{copy\+Channel1}}
+\index{copy\+Channel1@{copy\+Channel1}!main.\+c@{main.\+c}}
+\subsubsection[{copy\+Channel1}]{\setlength{\rightskip}{0pt plus 5cm}char copy\+Channel1 = 0}\label{main_8c_a7e88121c12c9f8bb6761d0186036fed9}
+
+
+Definition at line 48 of file main.\+c.
+
+\hypertarget{main_8c_a85e942f97f6dfffa67dab2bbc1634210}{}\index{main.\+c@{main.\+c}!copy\+Channel2@{copy\+Channel2}}
+\index{copy\+Channel2@{copy\+Channel2}!main.\+c@{main.\+c}}
+\subsubsection[{copy\+Channel2}]{\setlength{\rightskip}{0pt plus 5cm}char copy\+Channel2 = 0}\label{main_8c_a85e942f97f6dfffa67dab2bbc1634210}
+
+
+Definition at line 49 of file main.\+c.
+
+\hypertarget{main_8c_a939a13ca928c202ce8150c8c1f663690}{}\index{main.\+c@{main.\+c}!copy\+Channel\+Math@{copy\+Channel\+Math}}
+\index{copy\+Channel\+Math@{copy\+Channel\+Math}!main.\+c@{main.\+c}}
+\subsubsection[{copy\+Channel\+Math}]{\setlength{\rightskip}{0pt plus 5cm}char copy\+Channel\+Math = 0}\label{main_8c_a939a13ca928c202ce8150c8c1f663690}
+
+
+Definition at line 50 of file main.\+c.
+
+\hypertarget{main_8c_ab36effbd4d2f9af6a0097acd75203a07}{}\index{main.\+c@{main.\+c}!counter@{counter}}
+\index{counter@{counter}!main.\+c@{main.\+c}}
+\subsubsection[{counter}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char counter = 0}\label{main_8c_ab36effbd4d2f9af6a0097acd75203a07}
+
+
+Definition at line 34 of file main.\+c.
+
+\hypertarget{main_8c_a5464f471cb48f73ce809465115dba9de}{}\index{main.\+c@{main.\+c}!cursor\+A@{cursor\+A}}
+\index{cursor\+A@{cursor\+A}!main.\+c@{main.\+c}}
+\subsubsection[{cursor\+A}]{\setlength{\rightskip}{0pt plus 5cm}int16\+\_\+t cursor\+A}\label{main_8c_a5464f471cb48f73ce809465115dba9de}
+
+
+Definition at line 44 of file main.\+c.
+
+\hypertarget{main_8c_a6dc707c8a44ced30bca430b959ef085a}{}\index{main.\+c@{main.\+c}!cursor\+B@{cursor\+B}}
+\index{cursor\+B@{cursor\+B}!main.\+c@{main.\+c}}
+\subsubsection[{cursor\+B}]{\setlength{\rightskip}{0pt plus 5cm}int16\+\_\+t cursor\+B}\label{main_8c_a6dc707c8a44ced30bca430b959ef085a}
+
+
+Definition at line 44 of file main.\+c.
+
+\hypertarget{main_8c_a0b7b30e2c7220f4f8488c63b665ae39e}{}\index{main.\+c@{main.\+c}!data\+\_\+scope@{data\+\_\+scope}}
+\index{data\+\_\+scope@{data\+\_\+scope}!main.\+c@{main.\+c}}
+\subsubsection[{data\+\_\+scope}]{\setlength{\rightskip}{0pt plus 5cm}volatile int8\+\_\+t data\+\_\+scope\mbox{[}{\bf B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+Z\+E}\mbox{]} = \{0\}}\label{main_8c_a0b7b30e2c7220f4f8488c63b665ae39e}
+
+
+Definition at line 37 of file main.\+c.
+
+\hypertarget{main_8c_a5b49f9e0b8924e9beee66ddf282a34dd}{}\index{main.\+c@{main.\+c}!data\+\_\+scope2@{data\+\_\+scope2}}
+\index{data\+\_\+scope2@{data\+\_\+scope2}!main.\+c@{main.\+c}}
+\subsubsection[{data\+\_\+scope2}]{\setlength{\rightskip}{0pt plus 5cm}volatile int8\+\_\+t data\+\_\+scope2\mbox{[}{\bf B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+Z\+E}\mbox{]} = \{0\}}\label{main_8c_a5b49f9e0b8924e9beee66ddf282a34dd}
+
+
+Definition at line 39 of file main.\+c.
+
+\hypertarget{main_8c_a87f03f01fb52795980aa012dadf7e9c2}{}\index{main.\+c@{main.\+c}!data\+\_\+scope\+\_\+math@{data\+\_\+scope\+\_\+math}}
+\index{data\+\_\+scope\+\_\+math@{data\+\_\+scope\+\_\+math}!main.\+c@{main.\+c}}
+\subsubsection[{data\+\_\+scope\+\_\+math}]{\setlength{\rightskip}{0pt plus 5cm}int8\+\_\+t data\+\_\+scope\+\_\+math\mbox{[}{\bf B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+Z\+E}\mbox{]} = \{0\}}\label{main_8c_a87f03f01fb52795980aa012dadf7e9c2}
+
+
+Definition at line 41 of file main.\+c.
+
+\hypertarget{main_8c_a83ef74f31d16552f39ca5ddcd3c45fee}{}\index{main.\+c@{main.\+c}!data\+\_\+scope\+\_\+mem@{data\+\_\+scope\+\_\+mem}}
+\index{data\+\_\+scope\+\_\+mem@{data\+\_\+scope\+\_\+mem}!main.\+c@{main.\+c}}
+\subsubsection[{data\+\_\+scope\+\_\+mem}]{\setlength{\rightskip}{0pt plus 5cm}int8\+\_\+t data\+\_\+scope\+\_\+mem\mbox{[}{\bf B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+Z\+E}\mbox{]} = \{0\}}\label{main_8c_a83ef74f31d16552f39ca5ddcd3c45fee}
+
+
+Definition at line 38 of file main.\+c.
+
+\hypertarget{main_8c_a4c2ffce18282086008d68dc60d21e150}{}\index{main.\+c@{main.\+c}!data\+\_\+scope\+\_\+mem2@{data\+\_\+scope\+\_\+mem2}}
+\index{data\+\_\+scope\+\_\+mem2@{data\+\_\+scope\+\_\+mem2}!main.\+c@{main.\+c}}
+\subsubsection[{data\+\_\+scope\+\_\+mem2}]{\setlength{\rightskip}{0pt plus 5cm}int8\+\_\+t data\+\_\+scope\+\_\+mem2\mbox{[}{\bf B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+Z\+E}\mbox{]} = \{0\}}\label{main_8c_a4c2ffce18282086008d68dc60d21e150}
+
+
+Definition at line 40 of file main.\+c.
+
+\hypertarget{main_8c_a86afd2352713008b3d5d94002fc0dfa1}{}\index{main.\+c@{main.\+c}!enable\+\_\+copy@{enable\+\_\+copy}}
+\index{enable\+\_\+copy@{enable\+\_\+copy}!main.\+c@{main.\+c}}
+\subsubsection[{enable\+\_\+copy}]{\setlength{\rightskip}{0pt plus 5cm}char enable\+\_\+copy = 0}\label{main_8c_a86afd2352713008b3d5d94002fc0dfa1}
+
+
+Definition at line 32 of file main.\+c.
+
+\hypertarget{main_8c_a9170663a18fcf1a7986240800709b06b}{}\index{main.\+c@{main.\+c}!enable\+\_\+copy2@{enable\+\_\+copy2}}
+\index{enable\+\_\+copy2@{enable\+\_\+copy2}!main.\+c@{main.\+c}}
+\subsubsection[{enable\+\_\+copy2}]{\setlength{\rightskip}{0pt plus 5cm}char enable\+\_\+copy2 = 0}\label{main_8c_a9170663a18fcf1a7986240800709b06b}
+
+
+Definition at line 33 of file main.\+c.
+
+\hypertarget{main_8c_a6ba6697608f6f51faf5f743ff25e14ac}{}\index{main.\+c@{main.\+c}!sd\+Card\+Flag@{sd\+Card\+Flag}}
+\index{sd\+Card\+Flag@{sd\+Card\+Flag}!main.\+c@{main.\+c}}
+\subsubsection[{sd\+Card\+Flag}]{\setlength{\rightskip}{0pt plus 5cm}char sd\+Card\+Flag = 0}\label{main_8c_a6ba6697608f6f51faf5f743ff25e14ac}
+
+
+Definition at line 53 of file main.\+c.
+
+\hypertarget{main_8c_ad2539ff4fdff2f9713c37cca32c87b0d}{}\index{main.\+c@{main.\+c}!text@{text}}
+\index{text@{text}!main.\+c@{main.\+c}}
+\subsubsection[{text}]{\setlength{\rightskip}{0pt plus 5cm}char text\mbox{[}50\mbox{]}}\label{main_8c_ad2539ff4fdff2f9713c37cca32c87b0d}
+
+
+Definition at line 28 of file main.\+c.
+
+\hypertarget{main_8c_a053b964422ea57a684111651604b29eb}{}\index{main.\+c@{main.\+c}!text\+Cursor\+A@{text\+Cursor\+A}}
+\index{text\+Cursor\+A@{text\+Cursor\+A}!main.\+c@{main.\+c}}
+\subsubsection[{text\+Cursor\+A}]{\setlength{\rightskip}{0pt plus 5cm}char text\+Cursor\+A\mbox{[}8\mbox{]}}\label{main_8c_a053b964422ea57a684111651604b29eb}
+
+
+Definition at line 45 of file main.\+c.
+
+\hypertarget{main_8c_a5586efe73ef899f908b6ec51250ada23}{}\index{main.\+c@{main.\+c}!text\+Cursor\+B@{text\+Cursor\+B}}
+\index{text\+Cursor\+B@{text\+Cursor\+B}!main.\+c@{main.\+c}}
+\subsubsection[{text\+Cursor\+B}]{\setlength{\rightskip}{0pt plus 5cm}char text\+Cursor\+B\mbox{[}8\mbox{]}}\label{main_8c_a5586efe73ef899f908b6ec51250ada23}
+
+
+Definition at line 45 of file main.\+c.
+
+\hypertarget{main_8c_a66ccd72309ad1f50a5d20dff30b28144}{}\index{main.\+c@{main.\+c}!text\+Maths@{text\+Maths}}
+\index{text\+Maths@{text\+Maths}!main.\+c@{main.\+c}}
+\subsubsection[{text\+Maths}]{\setlength{\rightskip}{0pt plus 5cm}char text\+Maths\mbox{[}8\mbox{]}}\label{main_8c_a66ccd72309ad1f50a5d20dff30b28144}
+
+
+Definition at line 45 of file main.\+c.
+
+\hypertarget{main_8c_aadfad7aeab204f5210a5722dda9fbde3}{}\index{main.\+c@{main.\+c}!toggle@{toggle}}
+\index{toggle@{toggle}!main.\+c@{main.\+c}}
+\subsubsection[{toggle}]{\setlength{\rightskip}{0pt plus 5cm}char toggle = 0}\label{main_8c_aadfad7aeab204f5210a5722dda9fbde3}
+
+
+Definition at line 31 of file main.\+c.
+

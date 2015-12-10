@@ -1,0 +1,69 @@
+\hypertarget{viewcontroller_8h}{}\section{appli/mylibs/viewcontroller.h File Reference}
+\label{viewcontroller_8h}\index{appli/mylibs/viewcontroller.\+h@{appli/mylibs/viewcontroller.\+h}}
+
+
+Contient la définition des fonctions de gestion des boutons tactiles.  
+
+
+{\ttfamily \#include \char`\"{}macro\+\_\+types.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}stdint.\+h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+char \hyperlink{viewcontroller_8h_a2b268f2fb0735417d127ddac84bc4972}{virtual3\+D\+Button} (const char $\ast$\hyperlink{main_8h_ad2539ff4fdff2f9713c37cca32c87b0d}{text}, int x, int y, const uint16\+\_\+t color, int pressed, int touch\+X, int touch\+Y)
+\begin{DoxyCompactList}\small\item\em Dessine un bouton en 3\+D (style Windows 98) Largeur et hauteur sont calculés automatiquement en fonction de la chaîne de caractères. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Contient la définition des fonctions de gestion des boutons tactiles. 
+
+\begin{DoxyAuthor}{Author}
+François Leparoux 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+1 
+\end{DoxyVersion}
+
+
+\subsection{Function Documentation}
+\hypertarget{viewcontroller_8h_a2b268f2fb0735417d127ddac84bc4972}{}\index{viewcontroller.\+h@{viewcontroller.\+h}!virtual3\+D\+Button@{virtual3\+D\+Button}}
+\index{virtual3\+D\+Button@{virtual3\+D\+Button}!viewcontroller.\+h@{viewcontroller.\+h}}
+\subsubsection[{virtual3\+D\+Button(const char $\ast$text, int x, int y, const uint16\+\_\+t color, int pressed, int touch\+X, int touch\+Y)}]{\setlength{\rightskip}{0pt plus 5cm}char virtual3\+D\+Button (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{text, }
+\item[{int}]{x, }
+\item[{int}]{y, }
+\item[{const uint16\+\_\+t}]{color, }
+\item[{int}]{pressed, }
+\item[{int}]{touch\+X, }
+\item[{int}]{touch\+Y}
+\end{DoxyParamCaption}
+)}\label{viewcontroller_8h_a2b268f2fb0735417d127ddac84bc4972}
+
+
+Dessine un bouton en 3\+D (style Windows 98) Largeur et hauteur sont calculés automatiquement en fonction de la chaîne de caractères. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em text} & La chaîne de caractères à écrire à l\textquotesingle{}écran \\
+\hline
+{\em x} & La position horizontale où placer le texte \\
+\hline
+{\em y} & La position verticale où placer le texte \\
+\hline
+{\em color} & La couleur en R\+G\+B565 du bouton \\
+\hline
+{\em pressed} & L\textquotesingle{}état de la dalle tactile (en contact d\textquotesingle{}un doigt ou non) \\
+\hline
+{\em touch\+X} & La position X du doigt utilisateur sur la dalle tactile \\
+\hline
+{\em touch\+Y} & La position Y du doigt utilisateur sur la dalle tactile\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 si d\textquotesingle{}après les coordonnées de l\textquotesingle{}évenement tactile, le bouton a été appuyé, 0 sinon 
+\end{DoxyReturn}
+
+
+Definition at line 28 of file viewcontroller.\+c.
+

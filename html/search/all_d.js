@@ -1,0 +1,25 @@
+var searchData=
+[
+  ['text',['text',['../main_8c.html#ad2539ff4fdff2f9713c37cca32c87b0d',1,'text():&#160;main.c'],['../main_8h.html#ad2539ff4fdff2f9713c37cca32c87b0d',1,'text():&#160;main.c']]],
+  ['textcursora',['textCursorA',['../main_8c.html#a053b964422ea57a684111651604b29eb',1,'main.c']]],
+  ['textcursorb',['textCursorB',['../main_8c.html#a5586efe73ef899f908b6ec51250ada23',1,'main.c']]],
+  ['textmaths',['textMaths',['../main_8c.html#a66ccd72309ad1f50a5d20dff30b28144',1,'main.c']]],
+  ['tim3_5firqhandler',['TIM3_IRQHandler',['../timer_8c.html#ac8e51d2183b5230cbd5481f8867adce9',1,'TIM3_IRQHandler(void):&#160;timer.c'],['../timer_8h.html#ac8e51d2183b5230cbd5481f8867adce9',1,'TIM3_IRQHandler(void):&#160;timer.c']]],
+  ['timer_2ec',['timer.c',['../timer_8c.html',1,'']]],
+  ['timer_2eh',['timer.h',['../timer_8h.html',1,'']]],
+  ['timer3_5finit_5ffor_5f1ms',['TIMER3_init_for_1ms',['../timer_8c.html#ada72a791f839b8bde1e9304c963fd113',1,'TIMER3_init_for_1ms(void):&#160;timer.c'],['../timer_8h.html#ada72a791f839b8bde1e9304c963fd113',1,'TIMER3_init_for_1ms(void):&#160;timer.c']]],
+  ['timer3_5frun',['TIMER3_run',['../timer_8c.html#af55a83261c4a9ac16f84f1569f30d12e',1,'TIMER3_run(void):&#160;timer.c'],['../timer_8h.html#af55a83261c4a9ac16f84f1569f30d12e',1,'TIMER3_run(void):&#160;timer.c']]],
+  ['timer3_5fstop',['TIMER3_stop',['../timer_8c.html#a48370755ce35bc5c1d88d6d58727fc1b',1,'TIMER3_stop(void):&#160;timer.c'],['../timer_8h.html#a48370755ce35bc5c1d88d6d58727fc1b',1,'TIMER3_stop(void):&#160;timer.c']]],
+  ['timer3_5fuser_5fhandler_5fit_5f1ms',['TIMER3_user_handler_it_1ms',['../timer_8c.html#afb21615a8c4fd3bb9bb86440d292253f',1,'TIMER3_user_handler_it_1ms(void):&#160;timer.c'],['../timer_8h.html#afb21615a8c4fd3bb9bb86440d292253f',1,'TIMER3_user_handler_it_1ms(void):&#160;timer.c']]],
+  ['toggle',['toggle',['../main_8c.html#aadfad7aeab204f5210a5722dda9fbde3',1,'main.c']]],
+  ['touch_5fdetected',['touch_detected',['../struct_t_s___a_d_c.html#a19bcc0c50842ce9f91c3ff70a0379ad9',1,'TS_ADC']]],
+  ['ts_5fadc',['TS_ADC',['../struct_t_s___a_d_c.html',1,'']]],
+  ['ts_5fcalibration',['TS_Calibration',['../demo__touchscreen_8c.html#abc079c56bcb004b0a01e83c86fdaac04',1,'TS_Calibration(bool_e ask_for_finish, TS_Calibration_mode_e mode):&#160;demo_touchscreen.c'],['../demo__touchscreen_8h.html#abc079c56bcb004b0a01e83c86fdaac04',1,'TS_Calibration(bool_e ask_for_finish, TS_Calibration_mode_e mode):&#160;demo_touchscreen.c']]],
+  ['ts_5fcalibration_5fmode_5fe',['TS_Calibration_mode_e',['../demo__touchscreen_8h.html#a71fca4638203182f7fa2c3402b1d7f80',1,'demo_touchscreen.h']]],
+  ['ts_5fcoeff',['TS_COEFF',['../struct_t_s___c_o_e_f_f.html',1,'']]],
+  ['ts_5fget_5ffiltered_5ftouch',['TS_Get_Filtered_Touch',['../demo__touchscreen_8c.html#aaa871c874f78e1dde4c31f22aa6d9e1a',1,'TS_Get_Filtered_Touch(TS_ADC *ts_adc):&#160;demo_touchscreen.c'],['../demo__touchscreen_8h.html#aaa871c874f78e1dde4c31f22aa6d9e1a',1,'TS_Get_Filtered_Touch(TS_ADC *ts_adc):&#160;demo_touchscreen.c']]],
+  ['ts_5fget_5ftouch',['TS_Get_Touch',['../demo__touchscreen_8c.html#abab6fb4efbb0e34bc95ab7b28de83537',1,'TS_Get_Touch(uint16_t *x, uint16_t *y):&#160;demo_touchscreen.c'],['../demo__touchscreen_8h.html#abab6fb4efbb0e34bc95ab7b28de83537',1,'TS_Get_Touch(uint16_t *x, uint16_t *y):&#160;demo_touchscreen.c']]],
+  ['ts_5finit',['TS_Init',['../demo__touchscreen_8c.html#aa4684d3435eb6381e44d133c627134a4',1,'TS_Init(void):&#160;demo_touchscreen.c'],['../demo__touchscreen_8h.html#aa4684d3435eb6381e44d133c627134a4',1,'TS_Init(void):&#160;demo_touchscreen.c']]],
+  ['ts_5fis_5finitialized',['TS_is_initialized',['../demo__touchscreen_8c.html#ade23bc87d65f74a6ba6afd1e11fa6e4c',1,'TS_is_initialized(void):&#160;demo_touchscreen.c'],['../demo__touchscreen_8h.html#ade23bc87d65f74a6ba6afd1e11fa6e4c',1,'TS_is_initialized(void):&#160;demo_touchscreen.c']]],
+  ['ts_5fprocess_5f1ms',['TS_process_1ms',['../demo__touchscreen_8c.html#a4fa22907c3f024d4f6a3744e7ad2096b',1,'TS_process_1ms(void):&#160;demo_touchscreen.c'],['../demo__touchscreen_8h.html#a4fa22907c3f024d4f6a3744e7ad2096b',1,'TS_process_1ms(void):&#160;demo_touchscreen.c']]]
+];

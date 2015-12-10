@@ -1,0 +1,96 @@
+\hypertarget{sdcard_8c}{}\section{appli/mylibs/sdcard.c File Reference}
+\label{sdcard_8c}\index{appli/mylibs/sdcard.\+c@{appli/mylibs/sdcard.\+c}}
+
+
+Contient le code source la machine à état de gestion de la carte S\+D.  
+
+
+{\ttfamily \#include \char`\"{}sdcard.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}diskio.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}sd\+\_\+diskio.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}stm32f4\+\_\+sd.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}colors.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}bmpfile.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}macro\+\_\+types.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}string.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}main.\+h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{sdcard_8c_a78776c52434a7aa0aae60a4e102d98f0}{S\+D\+Card\+Machine} (void)
+\begin{DoxyCompactList}\small\item\em Machine à état permettant la capture d\textquotesingle{}écran puis l\textquotesingle{}enregistrement sur carte S\+D. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+P\+A\+R\+T\+I\+T\+I\+O\+N \hyperlink{sdcard_8c_a31374f2ecb2cee0e4b872fcfa2779265}{Vol\+To\+Part} \mbox{[}2\mbox{]} = \{(P\+A\+R\+T\+I\+T\+I\+O\+N)\{0, 0\}, (P\+A\+R\+T\+I\+T\+I\+O\+N)\{1, 1\}\}
+\item 
+char \hyperlink{sdcard_8c_afe5c7eca20c5b43d6d1a3bda215941bb}{S\+D\+Path} \mbox{[}4\mbox{]}
+\item 
+F\+A\+T\+F\+S \hyperlink{sdcard_8c_aba29a48da19fbdbdc88f02e60aebd587}{S\+D\+Fat\+Fs}
+\item 
+\hyperlink{unionstate__e}{state\+\_\+e} \hyperlink{sdcard_8c_a54074472aa252aa9fdabf64fa2ee8b8a}{status} = \hyperlink{sdcard_8h_a52b77dcd6180d54d314b8cbf0b4dc2d9afd6a0e4343048b10646dd2976cc5ad18}{I\+D\+L\+E}
+\begin{DoxyCompactList}\small\item\em Le statut courant de la machine à états de la carte S\+D. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Contient le code source la machine à état de gestion de la carte S\+D. 
+
+\begin{DoxyAuthor}{Author}
+François Leparoux 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+4 
+\end{DoxyVersion}
+
+
+\subsection{Function Documentation}
+\hypertarget{sdcard_8c_a78776c52434a7aa0aae60a4e102d98f0}{}\index{sdcard.\+c@{sdcard.\+c}!S\+D\+Card\+Machine@{S\+D\+Card\+Machine}}
+\index{S\+D\+Card\+Machine@{S\+D\+Card\+Machine}!sdcard.\+c@{sdcard.\+c}}
+\subsubsection[{S\+D\+Card\+Machine(void)}]{\setlength{\rightskip}{0pt plus 5cm}void S\+D\+Card\+Machine (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{sdcard_8c_a78776c52434a7aa0aae60a4e102d98f0}
+
+
+Machine à état permettant la capture d\textquotesingle{}écran puis l\textquotesingle{}enregistrement sur carte S\+D. 
+
+
+
+Definition at line 29 of file sdcard.\+c.
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{sdcard_8c_aba29a48da19fbdbdc88f02e60aebd587}{}\index{sdcard.\+c@{sdcard.\+c}!S\+D\+Fat\+Fs@{S\+D\+Fat\+Fs}}
+\index{S\+D\+Fat\+Fs@{S\+D\+Fat\+Fs}!sdcard.\+c@{sdcard.\+c}}
+\subsubsection[{S\+D\+Fat\+Fs}]{\setlength{\rightskip}{0pt plus 5cm}F\+A\+T\+F\+S S\+D\+Fat\+Fs}\label{sdcard_8c_aba29a48da19fbdbdc88f02e60aebd587}
+
+
+Definition at line 22 of file sdcard.\+c.
+
+\hypertarget{sdcard_8c_afe5c7eca20c5b43d6d1a3bda215941bb}{}\index{sdcard.\+c@{sdcard.\+c}!S\+D\+Path@{S\+D\+Path}}
+\index{S\+D\+Path@{S\+D\+Path}!sdcard.\+c@{sdcard.\+c}}
+\subsubsection[{S\+D\+Path}]{\setlength{\rightskip}{0pt plus 5cm}char S\+D\+Path\mbox{[}4\mbox{]}}\label{sdcard_8c_afe5c7eca20c5b43d6d1a3bda215941bb}
+
+
+Definition at line 21 of file sdcard.\+c.
+
+\hypertarget{sdcard_8c_a54074472aa252aa9fdabf64fa2ee8b8a}{}\index{sdcard.\+c@{sdcard.\+c}!status@{status}}
+\index{status@{status}!sdcard.\+c@{sdcard.\+c}}
+\subsubsection[{status}]{\setlength{\rightskip}{0pt plus 5cm}{\bf state\+\_\+e} status = {\bf I\+D\+L\+E}}\label{sdcard_8c_a54074472aa252aa9fdabf64fa2ee8b8a}
+
+
+Le statut courant de la machine à états de la carte S\+D. 
+
+
+
+Definition at line 24 of file sdcard.\+c.
+
+\hypertarget{sdcard_8c_a31374f2ecb2cee0e4b872fcfa2779265}{}\index{sdcard.\+c@{sdcard.\+c}!Vol\+To\+Part@{Vol\+To\+Part}}
+\index{Vol\+To\+Part@{Vol\+To\+Part}!sdcard.\+c@{sdcard.\+c}}
+\subsubsection[{Vol\+To\+Part}]{\setlength{\rightskip}{0pt plus 5cm}P\+A\+R\+T\+I\+T\+I\+O\+N Vol\+To\+Part\mbox{[}2\mbox{]} = \{(P\+A\+R\+T\+I\+T\+I\+O\+N)\{0, 0\}, (P\+A\+R\+T\+I\+T\+I\+O\+N)\{1, 1\}\}}\label{sdcard_8c_a31374f2ecb2cee0e4b872fcfa2779265}
+
+
+Definition at line 19 of file sdcard.\+c.
+

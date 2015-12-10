@@ -1,0 +1,195 @@
+\hypertarget{dmaadc_8c}{}\section{appli/mylibs/dmaadc.c File Reference}
+\label{dmaadc_8c}\index{appli/mylibs/dmaadc.\+c@{appli/mylibs/dmaadc.\+c}}
+
+
+Contient le code source qui permet l\textquotesingle{}initialisation et la gestion des périphériques A\+D\+C et D\+M\+A.  
+
+
+{\ttfamily \#include \char`\"{}main.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}timer.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}dmaadc.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}stm32f4xx\+\_\+hal.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}stm32f4\+\_\+gpio.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}stm32f4\+\_\+uart.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}stm32f4\+\_\+timer.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}stm32f4\+\_\+sys.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}macro\+\_\+types.\+h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{dmaadc_8c_af35e60c6c07db284a1ff7e8d19d5f746}{Dma\+Adc\+Init} (void)
+\begin{DoxyCompactList}\small\item\em Initialise les périphériques A\+D\+C et D\+M\+A pour qu\textquotesingle{}ils fonctionnent ensemblent. \end{DoxyCompactList}\item 
+void \hyperlink{dmaadc_8c_a82643e1ef79f5c1ad494f7d53a16f9f2}{Dma\+Adc\+Start} (void)
+\begin{DoxyCompactList}\small\item\em Lance les périphériques. \end{DoxyCompactList}\item 
+void \hyperlink{dmaadc_8c_aac6b202a7d9c8a65e1de64a81a46cac8}{Dma\+Adc\+Stop} (void)
+\begin{DoxyCompactList}\small\item\em Coupe l\textquotesingle{}acquisition. \end{DoxyCompactList}\item 
+void \hyperlink{dmaadc_8c_aaff6c42d834bacdbea5e3f025073cf2c}{Configure\+A\+D\+C} (void)
+\begin{DoxyCompactList}\small\item\em Configure le périphérique A\+D\+C. \end{DoxyCompactList}\item 
+void \hyperlink{dmaadc_8c_a305b0b7ea02432f4c9cfbd942dd3fd38}{Configure\+D\+M\+A} (void)
+\begin{DoxyCompactList}\small\item\em Configure le périphérique D\+M\+A. \end{DoxyCompactList}\item 
+void \hyperlink{dmaadc_8c_ac82add17365f81d83a1f17850be4854e}{A\+D\+C\+\_\+\+I\+R\+Q\+Handler} ()
+\begin{DoxyCompactList}\small\item\em Interruption qui se déclenche lorsque l\textquotesingle{}acquisition A\+D\+C est terminée. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+volatile uint32\+\_\+t \hyperlink{dmaadc_8c_a42322efde8182a7848b157cc97d6b2ef}{A\+D\+C\+\_\+\+Buff\+\_\+channel1} \mbox{[}\hyperlink{dmaadc_8h_a6b20d41d6252e9871430c242cb1a56e7}{B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+Z\+E} $\ast$2\mbox{]}
+\item 
+volatile uint32\+\_\+t \hyperlink{dmaadc_8c_aebcb02c9716f0d77d533b4f252cd396b}{A\+D\+C\+\_\+\+Buff\+\_\+channel2} \mbox{[}\hyperlink{dmaadc_8h_a6b20d41d6252e9871430c242cb1a56e7}{B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+Z\+E} $\ast$2\mbox{]}
+\item 
+volatile A\+D\+C\+\_\+\+Handle\+Type\+Def \hyperlink{dmaadc_8c_adcbc46d66cbe5c4fb9d6e22a9374d255}{g\+\_\+\+Adc\+Handle}
+\item 
+volatile A\+D\+C\+\_\+\+Handle\+Type\+Def \hyperlink{dmaadc_8c_a34bc74343ef582e72c8ec5607cffdb98}{g\+\_\+\+Adc\+Handle2}
+\item 
+volatile D\+M\+A\+\_\+\+Handle\+Type\+Def \hyperlink{dmaadc_8c_a7061e38258743faebdee53ae56485a6c}{g\+\_\+\+Dma\+Handle}
+\item 
+volatile D\+M\+A\+\_\+\+Handle\+Type\+Def \hyperlink{dmaadc_8c_a8100abd34e3812fea4a0c83709b7e30c}{g\+\_\+\+Dma\+Handle2}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Contient le code source qui permet l\textquotesingle{}initialisation et la gestion des périphériques A\+D\+C et D\+M\+A. 
+
+\begin{DoxyAuthor}{Author}
+Timé Kadel 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+2.\+5 
+\end{DoxyVersion}
+
+
+\subsection{Function Documentation}
+\hypertarget{dmaadc_8c_ac82add17365f81d83a1f17850be4854e}{}\index{dmaadc.\+c@{dmaadc.\+c}!A\+D\+C\+\_\+\+I\+R\+Q\+Handler@{A\+D\+C\+\_\+\+I\+R\+Q\+Handler}}
+\index{A\+D\+C\+\_\+\+I\+R\+Q\+Handler@{A\+D\+C\+\_\+\+I\+R\+Q\+Handler}!dmaadc.\+c@{dmaadc.\+c}}
+\subsubsection[{A\+D\+C\+\_\+\+I\+R\+Q\+Handler()}]{\setlength{\rightskip}{0pt plus 5cm}void A\+D\+C\+\_\+\+I\+R\+Q\+Handler (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{dmaadc_8c_ac82add17365f81d83a1f17850be4854e}
+
+
+Interruption qui se déclenche lorsque l\textquotesingle{}acquisition A\+D\+C est terminée. 
+
+
+
+Definition at line 198 of file dmaadc.\+c.
+
+\hypertarget{dmaadc_8c_aaff6c42d834bacdbea5e3f025073cf2c}{}\index{dmaadc.\+c@{dmaadc.\+c}!Configure\+A\+D\+C@{Configure\+A\+D\+C}}
+\index{Configure\+A\+D\+C@{Configure\+A\+D\+C}!dmaadc.\+c@{dmaadc.\+c}}
+\subsubsection[{Configure\+A\+D\+C(void)}]{\setlength{\rightskip}{0pt plus 5cm}void Configure\+A\+D\+C (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{dmaadc_8c_aaff6c42d834bacdbea5e3f025073cf2c}
+
+
+Configure le périphérique A\+D\+C. 
+
+
+
+Definition at line 67 of file dmaadc.\+c.
+
+\hypertarget{dmaadc_8c_a305b0b7ea02432f4c9cfbd942dd3fd38}{}\index{dmaadc.\+c@{dmaadc.\+c}!Configure\+D\+M\+A@{Configure\+D\+M\+A}}
+\index{Configure\+D\+M\+A@{Configure\+D\+M\+A}!dmaadc.\+c@{dmaadc.\+c}}
+\subsubsection[{Configure\+D\+M\+A(void)}]{\setlength{\rightskip}{0pt plus 5cm}void Configure\+D\+M\+A (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{dmaadc_8c_a305b0b7ea02432f4c9cfbd942dd3fd38}
+
+
+Configure le périphérique D\+M\+A. 
+
+
+
+Definition at line 148 of file dmaadc.\+c.
+
+\hypertarget{dmaadc_8c_af35e60c6c07db284a1ff7e8d19d5f746}{}\index{dmaadc.\+c@{dmaadc.\+c}!Dma\+Adc\+Init@{Dma\+Adc\+Init}}
+\index{Dma\+Adc\+Init@{Dma\+Adc\+Init}!dmaadc.\+c@{dmaadc.\+c}}
+\subsubsection[{Dma\+Adc\+Init(void)}]{\setlength{\rightskip}{0pt plus 5cm}void Dma\+Adc\+Init (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{dmaadc_8c_af35e60c6c07db284a1ff7e8d19d5f746}
+
+
+Initialise les périphériques A\+D\+C et D\+M\+A pour qu\textquotesingle{}ils fonctionnent ensemblent. 
+
+
+
+Definition at line 29 of file dmaadc.\+c.
+
+\hypertarget{dmaadc_8c_a82643e1ef79f5c1ad494f7d53a16f9f2}{}\index{dmaadc.\+c@{dmaadc.\+c}!Dma\+Adc\+Start@{Dma\+Adc\+Start}}
+\index{Dma\+Adc\+Start@{Dma\+Adc\+Start}!dmaadc.\+c@{dmaadc.\+c}}
+\subsubsection[{Dma\+Adc\+Start(void)}]{\setlength{\rightskip}{0pt plus 5cm}void Dma\+Adc\+Start (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{dmaadc_8c_a82643e1ef79f5c1ad494f7d53a16f9f2}
+
+
+Lance les périphériques. 
+
+
+
+Definition at line 45 of file dmaadc.\+c.
+
+\hypertarget{dmaadc_8c_aac6b202a7d9c8a65e1de64a81a46cac8}{}\index{dmaadc.\+c@{dmaadc.\+c}!Dma\+Adc\+Stop@{Dma\+Adc\+Stop}}
+\index{Dma\+Adc\+Stop@{Dma\+Adc\+Stop}!dmaadc.\+c@{dmaadc.\+c}}
+\subsubsection[{Dma\+Adc\+Stop(void)}]{\setlength{\rightskip}{0pt plus 5cm}void Dma\+Adc\+Stop (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{dmaadc_8c_aac6b202a7d9c8a65e1de64a81a46cac8}
+
+
+Coupe l\textquotesingle{}acquisition. 
+
+
+
+Definition at line 58 of file dmaadc.\+c.
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{dmaadc_8c_a42322efde8182a7848b157cc97d6b2ef}{}\index{dmaadc.\+c@{dmaadc.\+c}!A\+D\+C\+\_\+\+Buff\+\_\+channel1@{A\+D\+C\+\_\+\+Buff\+\_\+channel1}}
+\index{A\+D\+C\+\_\+\+Buff\+\_\+channel1@{A\+D\+C\+\_\+\+Buff\+\_\+channel1}!dmaadc.\+c@{dmaadc.\+c}}
+\subsubsection[{A\+D\+C\+\_\+\+Buff\+\_\+channel1}]{\setlength{\rightskip}{0pt plus 5cm}volatile uint32\+\_\+t A\+D\+C\+\_\+\+Buff\+\_\+channel1\mbox{[}{\bf B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+Z\+E} $\ast$2\mbox{]}}\label{dmaadc_8c_a42322efde8182a7848b157cc97d6b2ef}
+
+
+Definition at line 18 of file dmaadc.\+c.
+
+\hypertarget{dmaadc_8c_aebcb02c9716f0d77d533b4f252cd396b}{}\index{dmaadc.\+c@{dmaadc.\+c}!A\+D\+C\+\_\+\+Buff\+\_\+channel2@{A\+D\+C\+\_\+\+Buff\+\_\+channel2}}
+\index{A\+D\+C\+\_\+\+Buff\+\_\+channel2@{A\+D\+C\+\_\+\+Buff\+\_\+channel2}!dmaadc.\+c@{dmaadc.\+c}}
+\subsubsection[{A\+D\+C\+\_\+\+Buff\+\_\+channel2}]{\setlength{\rightskip}{0pt plus 5cm}volatile uint32\+\_\+t A\+D\+C\+\_\+\+Buff\+\_\+channel2\mbox{[}{\bf B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+Z\+E} $\ast$2\mbox{]}}\label{dmaadc_8c_aebcb02c9716f0d77d533b4f252cd396b}
+
+
+Definition at line 19 of file dmaadc.\+c.
+
+\hypertarget{dmaadc_8c_adcbc46d66cbe5c4fb9d6e22a9374d255}{}\index{dmaadc.\+c@{dmaadc.\+c}!g\+\_\+\+Adc\+Handle@{g\+\_\+\+Adc\+Handle}}
+\index{g\+\_\+\+Adc\+Handle@{g\+\_\+\+Adc\+Handle}!dmaadc.\+c@{dmaadc.\+c}}
+\subsubsection[{g\+\_\+\+Adc\+Handle}]{\setlength{\rightskip}{0pt plus 5cm}volatile A\+D\+C\+\_\+\+Handle\+Type\+Def g\+\_\+\+Adc\+Handle}\label{dmaadc_8c_adcbc46d66cbe5c4fb9d6e22a9374d255}
+
+
+Definition at line 22 of file dmaadc.\+c.
+
+\hypertarget{dmaadc_8c_a34bc74343ef582e72c8ec5607cffdb98}{}\index{dmaadc.\+c@{dmaadc.\+c}!g\+\_\+\+Adc\+Handle2@{g\+\_\+\+Adc\+Handle2}}
+\index{g\+\_\+\+Adc\+Handle2@{g\+\_\+\+Adc\+Handle2}!dmaadc.\+c@{dmaadc.\+c}}
+\subsubsection[{g\+\_\+\+Adc\+Handle2}]{\setlength{\rightskip}{0pt plus 5cm}volatile A\+D\+C\+\_\+\+Handle\+Type\+Def g\+\_\+\+Adc\+Handle2}\label{dmaadc_8c_a34bc74343ef582e72c8ec5607cffdb98}
+
+
+Definition at line 22 of file dmaadc.\+c.
+
+\hypertarget{dmaadc_8c_a7061e38258743faebdee53ae56485a6c}{}\index{dmaadc.\+c@{dmaadc.\+c}!g\+\_\+\+Dma\+Handle@{g\+\_\+\+Dma\+Handle}}
+\index{g\+\_\+\+Dma\+Handle@{g\+\_\+\+Dma\+Handle}!dmaadc.\+c@{dmaadc.\+c}}
+\subsubsection[{g\+\_\+\+Dma\+Handle}]{\setlength{\rightskip}{0pt plus 5cm}volatile D\+M\+A\+\_\+\+Handle\+Type\+Def g\+\_\+\+Dma\+Handle}\label{dmaadc_8c_a7061e38258743faebdee53ae56485a6c}
+
+
+Definition at line 23 of file dmaadc.\+c.
+
+\hypertarget{dmaadc_8c_a8100abd34e3812fea4a0c83709b7e30c}{}\index{dmaadc.\+c@{dmaadc.\+c}!g\+\_\+\+Dma\+Handle2@{g\+\_\+\+Dma\+Handle2}}
+\index{g\+\_\+\+Dma\+Handle2@{g\+\_\+\+Dma\+Handle2}!dmaadc.\+c@{dmaadc.\+c}}
+\subsubsection[{g\+\_\+\+Dma\+Handle2}]{\setlength{\rightskip}{0pt plus 5cm}volatile D\+M\+A\+\_\+\+Handle\+Type\+Def g\+\_\+\+Dma\+Handle2}\label{dmaadc_8c_a8100abd34e3812fea4a0c83709b7e30c}
+
+
+Definition at line 23 of file dmaadc.\+c.
+
